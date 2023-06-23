@@ -1,4 +1,4 @@
-import { socialLinks } from "@/constants/nav-bar";
+import { socialLinks } from "@/constants/social";
 import { Copyright } from "lucide-react";
 import Link from "next/link";
 import { BsGithub, BsLinkedin } from "react-icons/bs";

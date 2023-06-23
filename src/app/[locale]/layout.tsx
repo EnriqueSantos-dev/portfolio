@@ -4,7 +4,7 @@ import {
 	Providers,
 	ScrollStatePageIndicator,
 } from "@/components";
-import { socialLinks } from "@/constants/nav-bar";
+import { socialLinks } from "@/constants/social";
 import { Locale, getDictionary, i18n } from "@/i18n";
 import { mapperDictValuesFromKey } from "@/utils/mappers-i18n";
 import { Metadata } from "next";
