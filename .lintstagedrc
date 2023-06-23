@@ -1,0 +1,4 @@
+{
+	"*.{tsx,ts}": "next lint",
+	"*": "pnpm format"
+}
