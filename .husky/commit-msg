@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-pnpm commitlint --edit "$1"
+pnpm commitlint --edit "$1" && pnpm -- node ./node_modules/semantic-commit-emoji/dist/cli.js "$1"
