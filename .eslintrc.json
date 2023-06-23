@@ -1,0 +1,23 @@
+{
+	"extends": [
+		"next/core-web-vitals",
+		"plugin:tailwindcss/recommended",
+		"plugin:jsx-a11y/recommended"
+	],
+	"rules": {
+		"tailwindcss/no-custom-classname": "off",
+		"tailwindcss/classnames-order": "error"
+	},
+	"plugins": [
+		"prettier"
+	],
+	"settings": {
+		"tailwindcss": {
+			"calles": [
+				"className",
+				"cn"
+			],
+			"config": "./tailwind.config.js"
+		}
+	}
+}
