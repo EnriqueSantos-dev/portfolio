@@ -1,0 +1,66 @@
+{
+	"NavBarLinks": {
+		"links": [
+			{
+				"link": "sobre"
+			},
+			{
+				"link": "habilidades"
+			},
+			{
+				"link": "projetos"
+			},
+			{
+				"link": "contato"
+			}
+		]
+	},
+	"HeroDetails": {
+		"heading": {
+			"hello": "Olá 👋",
+			"myNameIs": "Me chamo Enrique Santos",
+			"iAm": "Desenvolvedor FullStack"
+		},
+		"paragraph": "Estudante de Ciência da computação. Criando soluções de software desde 2022.",
+		"buttons": {
+			"downloadCV": "baixar cv",
+			"contactMe": "me contate"
+		}
+	},
+	"About": {
+		"heading": "Sobre mim",
+		"paragraph": "Bem-vindo ao meu portfólio! Sou um desenvolvedor web full-stack jr e estudante de ciência da computação. Especializo-me na criação de websites dinâmicos e amigáveis ao usuário. Com uma base sólida no desenvolvimento front-end e back-end, tenho paixão por proporcionar experiências de usuário excepcionais. Estou sempre ansioso para aprender e me manter atualizado com as mais recentes tecnologias web. Estou empolgado para colaborar em projetos desafiadores e dar vida a ideias. Explore meu trabalho e entre em contato - adoraria fazer parte do seu próximo empreendimento de desenvolvimento web!",
+		"cards": {
+			"freelancer": {
+				"label": "Freelancer",
+				"experience": "1 + ano"
+			},
+			"student": {
+				"label": "Estudante",
+				"experience": null
+			}
+		}
+	},
+	"Skills": {
+		"heading": "Habilidades"
+	},
+	"Projects": {
+		"heading": "Meus projetos",
+		"subheading": "Aqui estão alguns dos meus projetos. Estou sempre trabalhando em algo novo, então volte sempre para ver no que tenho trabalhado!",
+		"card": {
+			"button": "Ver projeto",
+			"tag": "Tecnologias"
+		}
+	},
+	"Contact": {
+		"heading": "Contato",
+		"subheading": "Não perca tempo, Entre em contato 💪",
+		"form": {
+			"name": "Nome",
+			"namePlaceholder": "John Doe",
+			"message": "Mensagem",
+			"messagePlaceholder": "Me mande uma mensagem com suas necessidades",
+			"submit": "enviar"
+		}
+	}
+}

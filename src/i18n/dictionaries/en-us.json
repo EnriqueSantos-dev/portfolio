@@ -1,0 +1,66 @@
+{
+	"NavBarLinks": {
+		"links": [
+			{
+				"link": "about"
+			},
+			{
+				"link": "skills"
+			},
+			{
+				"link": "projects"
+			},
+			{
+				"link": "contact"
+			}
+		]
+	},
+	"HeroDetails": {
+		"heading": {
+			"hello": "Hello 👋",
+			"myNameIs": "I'm Enrique Santos",
+			"iAm": "FullStack Developer"
+		},
+		"paragraph": "Student science computer. Building software solutions since 2022.",
+		"buttons": {
+			"downloadCV": "download CV",
+			"contactMe": "contact-me"
+		}
+	},
+	"About": {
+		"heading": "About Me",
+		"paragraph": "Welcome to my portfolio! I'm a junior full-stack web developer and computer science student. I specialize in creating dynamic and user-friendly websites. With a strong foundation in both front-end and back-end development, I'm passionate about delivering exceptional user experiences. I'm always eager to learn and stay updated with the latest web technologies. I'm excited to collaborate on challenging projects and bring ideas to life. Explore my work and get in touch-I'd love to be a part of your next web development venture!",
+		"cards": {
+			"freelancer": {
+				"label": "FreeLancer",
+				"experience": "1 + year"
+			},
+			"student": {
+				"label": "Student",
+				"experience": null
+			}
+		}
+	},
+	"Skills": {
+		"heading": "Skills"
+	},
+	"Projects": {
+		"heading": "Projects",
+		"subheading": "Here are some of my projects. I'm always working on something new, so check back often to see what I've been up to!",
+		"card": {
+			"button": "Try it out",
+			"tag": "Tech Stack"
+		}
+	},
+	"Contact": {
+		"heading": "Contact Me",
+		"subheading": "Love to hear from you, let's get in touch 💪",
+		"form": {
+			"name": "Name",
+			"namePlaceholder": "John Doe",
+			"message": "Message",
+			"messagePlaceholder": "Hi Enrique, I would like to talk to you about...",
+			"submit": "send message"
+		}
+	}
+}
