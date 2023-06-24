@@ -10,6 +10,7 @@ export function ScrollStatePageIndicator() {
 	return (
 		<motion.div
 			role="progressbar"
+			aria-label="Page scroll progress indicator"
 			className="fixed left-0 top-[72px] z-[5px] h-1 w-full origin-left rounded-full bg-hightLightGradient"
 			style={{ scaleX }}
 		/>
