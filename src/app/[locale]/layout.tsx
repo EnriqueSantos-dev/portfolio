@@ -4,7 +4,8 @@ import {
 	Providers,
 	ScrollStatePageIndicator,
 } from "@/components";
-import { socialLinks } from "@/constants/social";
+import { MobileMenu } from "@/components/mobile-menu";
+import { seoConfig } from "@/config/seo-site";
 import { MenuProvider } from "@/contexts/menu";
 import { Locale, getDictionary, i18n } from "@/i18n";
 import { mapperDictValuesFromKey } from "@/utils/mappers-i18n";
@@ -12,26 +13,26 @@ import { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ReactNode } from "react";
 import "../globals.css";
-import { MobileMenu } from "@/components/mobile-menu";
+import { getNormalizedLocale } from "@/utils/get-normalized-locale";
 
 const inter = Inter({
 	subsets: ["latin"],
 	weight: ["400", "500", "700"],
 });
 
-export function generateMetadata(): Metadata {
-	return {
-		title: "Enrique Santos | Portfólio",
-		description: "Portfólio de Enrique Santos",
-		authors: {
-			name: "Enrique Santos",
-			url: socialLinks.github,
-		},
-		category: "website",
-		robots: "index, follow",
-		keywords:
-			"Web, NextJS, React, TailwindCss, Server-Components, Radix-ui, Frame-Motion, Typescript, Javascript, CSS, HTML, Frontend, Backend, Fullstack, Developer, Software, Engineer, Portfolio",
-	};
+export function generateMetadata({
+	params,
+}: {
+	params: { locale: string };
+}): Metadata {
+	if (!i18n.locales.includes(params.locale as Locale)) {
+		return {
+			title: "404 - Page Not Found",
+			description: "This page could not be found.",
+		};
+	}
+
+	return seoConfig[params.locale as Locale];
 }
 
 export async function generateStaticParams() {
@@ -49,7 +50,7 @@ export default async function RootLayout({
 	const linksNavBar = mapperDictValuesFromKey(dictionary, "NavBarLinks").links;
 
 	return (
-		<html lang={params.locale}>
+		<html lang={getNormalizedLocale(params.locale)}>
 			<body
 				className={`${inter.className} bg-grid w-full bg-neutral-50 bg-cover bg-center dark:bg-neutral-900`}
 			>
