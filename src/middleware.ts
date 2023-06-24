@@ -26,6 +26,7 @@ export function middleware(request: NextRequest) {
 	if (
 		[
 			"/about-illustration.svg",
+			"/enrique-santos-de-oliveira-curriculum.pdf",
 			"/favicon.ico",
 			// Your other files in `public`
 		].includes(pathname)
