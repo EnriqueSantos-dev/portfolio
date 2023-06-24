@@ -41,6 +41,7 @@ function Card({
 					<Link
 						href={repositoryUrl}
 						target="_blank"
+						aria-label="Navigate to github repository"
 						className="rounded-lg p-2 text-neutral-900 transition-colors hover:opacity-80 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-amber-500 dark:text-neutral-100"
 					>
 						<GithubIcon size={20} />
