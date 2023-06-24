@@ -3,28 +3,28 @@
 @tailwind utilities;
 
 @layer components {
-  .gradient-highlight {
-    @apply bg-clip-text text-transparent bg-gradient-to-tr from-red-500 to-amber-500;
-  }
+	.gradient-highlight {
+		@apply bg-clip-text text-transparent bg-gradient-to-tr from-red-500 to-amber-500;
+	}
 }
 
-/* :root {
-  --hight-light-gradient: linear-gradient(to right, #ef4343 30%, #f59e0b 50%);
-} */
-
 html:is(.dark) #gradient_svg stop {
-  stop-color: rgb(100, 100, 100);
+	stop-color: rgb(100, 100, 100);
+}
+
+.overflow-hidden {
+	overflow: hidden;
 }
 
 #gradient_svg stop:last-child {
-  stop-color: black;
+	stop-color: black;
 }
 
 #gradient_svg stop:first-child {
-  stop-color: black;
-  stop-opacity: 1;
+	stop-color: black;
+	stop-opacity: 1;
 }
 
 main > div > *:not(:first-child) {
-  padding-block: 7.5rem;
+	padding-block: 7.5rem;
 }
