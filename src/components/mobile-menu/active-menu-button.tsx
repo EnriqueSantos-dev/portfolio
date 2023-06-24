@@ -17,6 +17,7 @@ export function ActiveMobileMenuButton() {
 		<TooltipProvider>
 			<Tooltip delayDuration={300}>
 				<TooltipTrigger
+					aria-label="Toggle menu"
 					className="cursor-pointer text-neutral-900 dark:text-neutral-100 lg:hidden"
 					onClick={toggleMenu}
 				>
