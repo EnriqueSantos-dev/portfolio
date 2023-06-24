@@ -1,9 +1,9 @@
 import { LanguagePick } from "@/components/language-picker";
-import { MobileMenu } from "@/components/mobile-menu";
 import { ToggleTheme } from "@/components/toggle-theme";
 import { socialLinks } from "@/constants/social";
 import Link from "next/link";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { ActiveMobileMenuButton } from "./mobile-menu/active-menu-button";
 
 export type MainNavProps = {
 	links: Record<"link", string>[];
@@ -35,13 +35,13 @@ export function MainNav({ links }: MainNavProps) {
 				))}
 			</ul>
 
-			<div className="flex items-center space-x-3">
+			<div className="flex items-center gap-3">
 				<div className="hidden lg:flex lg:items-center lg:gap-2">
 					<LanguagePick />
 					<ToggleTheme />
 				</div>
 
-				<MobileMenu />
+				<ActiveMobileMenuButton />
 
 				<Link
 					href={socialLinks.github}
