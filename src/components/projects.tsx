@@ -12,7 +12,6 @@ type DictionaryProjects = {
 	subheading: string;
 	card: {
 		button: string;
-		tag: string;
 	};
 };
 
@@ -52,7 +51,6 @@ export function Projects({ sectionId, dictionary, projects }: ProjectsProps) {
 						{...project}
 						dictionary={{
 							button: dictionary.card.button,
-							tag: dictionary.card.tag,
 						}}
 					/>
 				))}

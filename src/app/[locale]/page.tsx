@@ -5,6 +5,7 @@ import { mapperDictValuesFromKey } from "@/utils/mappers-i18n";
 
 function getFormattedLocaleForHyGraph(locale: string) {
 	const [localeId, localeCountry] = locale.split("-");
+
 	return `${localeId}_${localeCountry.toUpperCase()}`;
 }
 

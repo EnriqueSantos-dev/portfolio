@@ -1,6 +1,6 @@
 {
-	"./src/**/*.{tsx,ts}": [
+	"./src/**/*.{tsx,ts,css}": [
 		"pnpm format",
-		"next lint"
+		"pnpm lint"
 	]
 }
