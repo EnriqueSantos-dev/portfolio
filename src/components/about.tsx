@@ -31,13 +31,13 @@ export function About({ dictionary, sectionId }: AboutProps) {
 	const inView = useInView(divRef);
 
 	return (
-		<section id={sectionId} ref={divRef} className="space-y-16">
-			<h2 className="gradient-highlight mb-2 block text-center text-3xl font-bold md:text-4xl/10">
+		<section id={sectionId} ref={divRef} className="space-y-12">
+			<h2 className="gradient-highlight block text-center text-3xl font-bold md:text-4xl/10">
 				{dictionary.heading}
 			</h2>
 
-			{inView && (
-				<AnimatePresence>
+			<AnimatePresence>
+				{inView && (
 					<motion.div
 						initial={{ x: -100, opacity: 0 }}
 						animate={{ x: 0, opacity: 1 }}
@@ -46,7 +46,7 @@ export function About({ dictionary, sectionId }: AboutProps) {
 						className="grid grid-cols-1 place-items-center gap-y-16 lg:grid-cols-2 lg:gap-y-0"
 					>
 						<div className="flex flex-col gap-6 lg:gap-4">
-							<p className="text-justify text-lg/6 dark:text-neutral-100 md:text-lg/9">
+							<p className="text-justify text-lg/7 dark:text-neutral-100 md:text-lg/9">
 								{dictionary.paragraph}
 							</p>
 
@@ -113,8 +113,8 @@ export function About({ dictionary, sectionId }: AboutProps) {
 							/>
 						</motion.div>
 					</motion.div>
-				</AnimatePresence>
-			)}
+				)}
+			</AnimatePresence>
 		</section>
 	);
 }

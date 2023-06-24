@@ -34,14 +34,14 @@ export function Contact({ sectionId, dictionary }: ContactProps) {
 				{dictionary.heading}
 			</h2>
 
-			{inView && (
-				<AnimatePresence>
+			<AnimatePresence>
+				{inView && (
 					<div className="grid grid-cols-1 place-content-center gap-y-12 lg:grid-cols-2 lg:gap-y-0">
 						<motion.div
-							initial={{ x: -100, opacity: 0 }}
+							initial={{ x: -50, opacity: 0 }}
 							animate={{ x: 0, opacity: 1 }}
-							exit={{ x: -100, opacity: 0 }}
-							transition={{ duration: 0.3, delay: 0.3 }}
+							exit={{ x: -50, opacity: 0 }}
+							transition={{ duration: 0.3 }}
 							className="flex flex-col gap-8"
 						>
 							<h3 className="text-center text-2xl font-bold text-neutral-900 dark:text-neutral-100 md:text-3xl/10 lg:text-start">
@@ -90,9 +90,10 @@ export function Contact({ sectionId, dictionary }: ContactProps) {
 						</motion.div>
 
 						<motion.div
-							initial={{ x: 100, scale: 0.8, opacity: 0 }}
+							initial={{ x: 50, scale: 0.8, opacity: 0 }}
 							animate={{ x: 0, scale: 1, opacity: 1 }}
-							transition={{ duration: 0.3, delay: 0.3 }}
+							transition={{ duration: 0.3 }}
+							whileTap={{ scale: 1.1 }}
 							exit={{ x: 100, scale: 0.8, opacity: 0 }}
 							className="relative text-center"
 						>
@@ -106,8 +107,8 @@ export function Contact({ sectionId, dictionary }: ContactProps) {
 							/>
 						</motion.div>
 					</div>
-				</AnimatePresence>
-			)}
+				)}
+			</AnimatePresence>
 		</section>
 	);
 }
