@@ -20,11 +20,11 @@ const inter = Inter({
 	weight: ["400", "500", "700"],
 });
 
-export function generateMetadata({
+export async function generateMetadata({
 	params,
 }: {
 	params: { locale: string };
-}): Metadata {
+}): Promise<Metadata> {
 	if (!i18n.locales.includes(params.locale as Locale)) {
 		return {
 			title: "404 - Page Not Found",
