@@ -16,6 +16,7 @@ export function CardProject({
 }: Project & {
 	dictionary: {
 		button: string;
+		techs: string;
 	};
 }) {
 	return (
@@ -61,7 +62,7 @@ export function CardProject({
 				</p>
 
 				<div className="">
-					<span className="font-medium">Techs</span>
+					<span className="font-medium">{dictionary.techs}</span>
 
 					<div className="mt-2 flex w-full flex-wrap gap-2">
 						{tags.map((tag) => (

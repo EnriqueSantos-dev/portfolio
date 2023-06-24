@@ -48,7 +48,8 @@
 		"heading": "Projects",
 		"subheading": "Here are some of my projects. I'm always working on something new, so check back often to see what I've been up to!",
 		"card": {
-			"button": "Try it out"
+			"button": "Try it out",
+			"techs": "Tech stack and tools"
 		}
 	},
 	"Contact": {

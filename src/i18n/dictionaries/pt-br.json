@@ -48,7 +48,8 @@
 		"heading": "Meus projetos",
 		"subheading": "Aqui estão alguns dos meus projetos. Estou sempre trabalhando em algo novo, então volte sempre para ver no que tenho trabalhado!",
 		"card": {
-			"button": "Ver projeto"
+			"button": "Ver projeto",
+			"techs": "Tecnologias e ferramentas"
 		}
 	},
 	"Contact": {
