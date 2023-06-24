@@ -5,12 +5,14 @@ import {
 	ScrollStatePageIndicator,
 } from "@/components";
 import { socialLinks } from "@/constants/social";
+import { MenuProvider } from "@/contexts/menu";
 import { Locale, getDictionary, i18n } from "@/i18n";
 import { mapperDictValuesFromKey } from "@/utils/mappers-i18n";
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ReactNode } from "react";
 import "../globals.css";
+import { MobileMenu } from "@/components/mobile-menu";
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -44,6 +46,7 @@ export default async function RootLayout({
 	params: { locale: string };
 }) {
 	const dictionary = await getDictionary(params.locale as Locale);
+	const linksNavBar = mapperDictValuesFromKey(dictionary, "NavBarLinks").links;
 
 	return (
 		<html lang={params.locale}>
@@ -51,12 +54,14 @@ export default async function RootLayout({
 				className={`${inter.className} bg-grid w-full bg-neutral-50 bg-cover bg-center dark:bg-neutral-900`}
 			>
 				<Providers>
-					<header className="fixed top-0 z-10 h-[72px] w-full border-b border-neutral-200 bg-neutral-100/40 backdrop-blur-md dark:border-neutral-800 dark:bg-neutral-900/40">
-						<MainNav
-							links={mapperDictValuesFromKey(dictionary, "NavBarLinks").links}
-						/>
-						<ScrollStatePageIndicator />
-					</header>
+					<MenuProvider>
+						<header className="fixed top-0 z-10 h-[72px] w-full border-b border-neutral-200 bg-neutral-50/90 backdrop-blur-md dark:border-neutral-800 dark:bg-neutral-900/90">
+							<MainNav links={linksNavBar} />
+							<ScrollStatePageIndicator />
+						</header>
+
+						<MobileMenu links={linksNavBar} />
+					</MenuProvider>
 					{children}
 					<Footer />
 				</Providers>
