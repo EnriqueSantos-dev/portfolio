@@ -40,7 +40,7 @@ export function LanguagePick() {
 										locale="en-us"
 										className="dark:focus-visible:gradient-highlight dark:hover:gradient-highlight inline-block space-x-2 p-1 text-xs font-medium text-neutral-900 transition-all hover:underline focus-visible:text-neutral-950 focus-visible:underline focus-visible:decoration-amber-500 focus-visible:outline-none dark:text-neutral-300"
 									>
-										English USA
+										English US
 									</Link>
 								</NavigationMenuLink>
 							</li>
