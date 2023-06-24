@@ -36,8 +36,11 @@ export function MainNav({ links }: MainNavProps) {
 			</ul>
 
 			<div className="flex items-center space-x-3">
-				<LanguagePick />
-				<ToggleTheme />
+				<div className="hidden lg:flex lg:items-center lg:gap-2">
+					<LanguagePick />
+					<ToggleTheme />
+				</div>
+
 				<MobileMenu />
 
 				<Link
