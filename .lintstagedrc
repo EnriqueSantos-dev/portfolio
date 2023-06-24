@@ -1,6 +1,0 @@
-{
-	"./src/**/*.{tsx,ts,css}": [
-		"pnpm format",
-		"pnpm lint"
-	]
-}
