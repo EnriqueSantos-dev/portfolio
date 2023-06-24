@@ -4,8 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { buttonVariants } from "../ui";
 import { Tag } from "./tag";
+import { memo } from "react";
 
-export function CardProject({
+function Card({
 	name,
 	backgroundCover,
 	description,
@@ -74,3 +75,5 @@ export function CardProject({
 		</div>
 	);
 }
+
+export const CardProject = memo(Card);
