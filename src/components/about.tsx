@@ -32,7 +32,7 @@ export function About({ dictionary, sectionId }: AboutProps) {
 
 	return (
 		<section id={sectionId} ref={divRef} className="space-y-16">
-			<h2 className="gradient-highlight block text-center text-3xl font-bold md:text-4xl">
+			<h2 className="gradient-highlight mb-2 block text-center text-3xl font-bold md:text-4xl/10">
 				{dictionary.heading}
 			</h2>
 

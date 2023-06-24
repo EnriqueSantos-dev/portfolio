@@ -18,9 +18,11 @@ export function Skills({ dictionary, sectionId }: SkillsProps) {
 
 	return (
 		<section id={sectionId} className="flex flex-col space-y-16">
-			<h2 className="gradient-highlight block text-center text-3xl font-bold md:text-4xl">
-				{dictionary.heading}
-			</h2>
+			<div className="text-center">
+				<h2 className="gradient-highlight mb-2 block text-3xl font-bold md:text-4xl/10">
+					{dictionary.heading}
+				</h2>
+			</div>
 
 			<div
 				className="mx-auto mt-10 flex flex-wrap items-center justify-around gap-4 lg:justify-center xl:max-w-[80%]"
