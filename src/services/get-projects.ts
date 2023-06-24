@@ -48,7 +48,9 @@ export async function getAllProjects(
 		method: "POST",
 		headers,
 		body: JSON.stringify(body),
-		cache: "force-cache",
+		next: {
+			revalidate: 60 * 60 * 24, // 24 hours
+		},
 	});
 
 	const data = await res.json();
