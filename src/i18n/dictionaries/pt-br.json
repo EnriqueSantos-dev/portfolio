@@ -29,7 +29,7 @@
 	},
 	"About": {
 		"heading": "Sobre mim",
-		"paragraph": "Bem-vindo ao meu portfólio! Sou um desenvolvedor web full-stack jr e estudante de ciência da computação. Especializo-me na criação de websites dinâmicos e amigáveis ao usuário. Com uma base sólida no desenvolvimento front-end e back-end, tenho paixão por proporcionar experiências de usuário excepcionais. Estou sempre ansioso para aprender e me manter atualizado com as mais recentes tecnologias web. Estou empolgado para colaborar em projetos desafiadores e dar vida a ideias. Explore meu trabalho e entre em contato - adoraria fazer parte do seu próximo empreendimento de desenvolvimento web!",
+		"paragraph": "Sou um desenvolvedor web full-stack jr e estudante de ciência da computação. Especializo-me na criação de websites dinâmicos e amigáveis ao usuário. Com uma base sólida no desenvolvimento front-end e back-end, tenho paixão por proporcionar experiências de usuário excepcionais. Estou sempre ansioso para aprender e me manter atualizado com as mais recentes tecnologias web. Estou empolgado para colaborar em projetos desafiadores e dar vida a ideias. Explore meu trabalho e entre em contato!",
 		"cards": {
 			"freelancer": {
 				"label": "Freelancer",
@@ -42,7 +42,8 @@
 		}
 	},
 	"Skills": {
-		"heading": "Habilidades"
+		"heading": "Habilidades",
+		"subheading": "Essas são apenas algumas das tecnologias com as quais tenho familiaridade e que continuo a explorar e aprimorar constantemente."
 	},
 	"Projects": {
 		"heading": "Meus projetos",

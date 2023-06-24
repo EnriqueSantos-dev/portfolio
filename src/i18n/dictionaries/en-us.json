@@ -29,7 +29,7 @@
 	},
 	"About": {
 		"heading": "About Me",
-		"paragraph": "Welcome to my portfolio! I'm a junior full-stack web developer and computer science student. I specialize in creating dynamic and user-friendly websites. With a strong foundation in both front-end and back-end development, I'm passionate about delivering exceptional user experiences. I'm always eager to learn and stay updated with the latest web technologies. I'm excited to collaborate on challenging projects and bring ideas to life. Explore my work and get in touch-I'd love to be a part of your next web development venture!",
+		"paragraph": "I'm a junior full-stack web developer and computer science student. I specialize in creating dynamic and user-friendly websites. With a strong foundation in both front-end and back-end development, I'm passionate about delivering exceptional user experiences. I'm always eager to learn and stay updated with the latest web technologies. I'm excited to collaborate on challenging projects and bring ideas to life. Explore my work and get in touch-I'd!",
 		"cards": {
 			"freelancer": {
 				"label": "FreeLancer",
@@ -42,7 +42,8 @@
 		}
 	},
 	"Skills": {
-		"heading": "Skills"
+		"heading": "Skills",
+		"subheading": "These are just some of the technologies that I'm familiar with and continue to explore and enhance constantly."
 	},
 	"Projects": {
 		"heading": "Projects",
