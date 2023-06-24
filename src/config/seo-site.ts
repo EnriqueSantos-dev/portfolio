@@ -17,7 +17,6 @@ const generateImagesData = (locale: Locale) => {
 
 const generateCommonMetadata = (locale: Locale): Metadata => {
 	return {
-		robots: "index,follow",
 		twitter: {
 			card: "summary_large_image",
 			creatorId: "@Enrique_S_D_O",
