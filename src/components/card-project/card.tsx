@@ -22,7 +22,7 @@ function Card({
 }) {
 	return (
 		<div className="relative overflow-hidden rounded-lg bg-neutral-100/60 ring-1 ring-neutral-300/80 ring-offset-[3px] ring-offset-neutral-200 backdrop-blur-lg dark:bg-neutral-900/60 dark:ring-neutral-600 dark:ring-offset-neutral-800">
-			<div className="relative h-52 w-full shadow-sm">
+			<div className="relative aspect-video shadow-sm">
 				<Image
 					src={backgroundCover.url}
 					fill
