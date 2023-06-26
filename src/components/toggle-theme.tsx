@@ -16,22 +16,24 @@ export function ToggleTheme() {
 	const isDark = theme === "dark";
 
 	return (
-		<TooltipProvider>
+		<TooltipProvider delayDuration={300}>
 			<TooltipPrimitive>
 				<TooltipTrigger asChild>
 					<Switch.Root
 						aria-label="Switch between dark and light mode"
 						className={cn(
-							"bg-purple relative flex h-6 w-12 overflow-hidden items-start focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-amber-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white  dark:focus-visible:ring-offset-zinc-900 dark:border-zinc-800 border dark:hover:bg-zinc-800 dark:hover:border-zinc-700 hover:bg-neutral-100 transition-colors dark:bg-neutral-950/50 dark:backdrop-blur-md rounded-full"
+							"group bg-purple relative flex h-6 w-12 overflow-hidden items-start focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-amber-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-zinc-900 dark:border-zinc-800 border dark:hover:bg-zinc-800 dark:hover:border-zinc-700 hover:bg-neutral-100 transition-colors dark:bg-neutral-950/50 dark:backdrop-blur-md rounded-full"
 						)}
 						onCheckedChange={toggleTheme}
 					>
 						<Switch.Thumb
 							asChild
 							className={cn(
-								"transition-transform flex h-4/5 p-px w-5 items-center justify-center rounded-full bg-gradient-to-r from-red-500 ml-[3px] shadow-sm to-amber-500 absolute top-1/2 -translate-y-1/2 text-white",
+								"transition-[transform,background] duration-300 flex h-4/5 p-[2px] w-5 items-center justify-center rounded-full ml-[3px] absolute top-1/2 -translate-y-1/2",
 								{
-									"translate-x-full": isDark,
+									"translate-x-full text-neutral-100 bg-neutral-700 group-hover:bg-neutral-950":
+										isDark,
+									"text-neutral-900 bg-neutral-200": !isDark,
 								}
 							)}
 						>
@@ -43,7 +45,7 @@ export function ToggleTheme() {
 									viewBox="0 0 24 24"
 									fill="none"
 									stroke="currentColor"
-									strokeWidth="3"
+									strokeWidth="2"
 									strokeLinecap="round"
 									strokeLinejoin="round"
 								>
