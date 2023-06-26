@@ -52,7 +52,7 @@ export default async function RootLayout({
 	return (
 		<html lang={getNormalizedLocale(params.locale)}>
 			<body
-				className={`${inter.className} bg-grid w-full bg-neutral-50 bg-cover bg-center dark:bg-neutral-900`}
+				className={`${inter.className} bg-grid w-full bg-neutral-50 bg-cover bg-center transition-colors dark:bg-neutral-900`}
 			>
 				<Providers>
 					<MenuProvider>
