@@ -1,7 +1,9 @@
 export type GetProjectsResponse = {
 	data: {
-		projects: Project[];
 		projectsConnection: {
+			edges: {
+				node: Project;
+			}[];
 			pageInfo: PaginationInfosGetProjects;
 		};
 	};
