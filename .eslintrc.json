@@ -6,7 +6,8 @@
 	],
 	"rules": {
 		"tailwindcss/no-custom-classname": "off",
-		"tailwindcss/classnames-order": "error"
+		"tailwindcss/classnames-order": "error",
+		"react/self-closing-comp": "error"
 	},
 	"plugins": [
 		"prettier"
