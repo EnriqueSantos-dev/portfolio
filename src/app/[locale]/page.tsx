@@ -9,11 +9,19 @@ function getFormattedLocaleForHyGraph(locale: string) {
 	return `${localeId}_${localeCountry.toUpperCase()}`;
 }
 
+async function getProjects(locale: string) {
+	// no throw error in server side rendering if getAllProjects fails to fetch data from API endpoint (it will return undefined)
+	return await getAllProjects()
+		.then((projects) => projects)
+		.catch(() => undefined);
+}
+
 export default async function Home({ params }: { params: { locale: string } }) {
 	const locale = getFormattedLocaleForHyGraph(params.locale);
-	const projects = await getAllProjects(locale);
-
-	const dictionary = await getDictionary(params.locale as Locale);
+	const [projects, dictionary] = await Promise.all([
+		getProjects(locale),
+		getDictionary(params.locale as Locale),
+	]);
 
 	return (
 		<main className="dark:text-white">
@@ -33,6 +41,7 @@ export default async function Home({ params }: { params: { locale: string } }) {
 				/>
 				<Projects
 					projects={projects}
+					currentLocale={locale}
 					sectionId={
 						mapperDictValuesFromKey(dictionary, "NavBarLinks").links[2].link
 					}
