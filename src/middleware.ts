@@ -26,6 +26,7 @@ export function middleware(request: NextRequest) {
 	if (
 		[
 			"/assets/og.png",
+			"/robots.txt",
 			"/about-illustration.svg",
 			"/enrique-santos-de-oliveira-curriculum.pdf",
 			"/favicon.ico",
