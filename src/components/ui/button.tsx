@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import React from "react";
 
 export const buttonVariants = cva(
-	"inline-flex h-10 w-full cursor-pointer items-center justify-center gap-2 rounded-md text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none",
+	"inline-flex h-10 w-full cursor-pointer items-center justify-center gap-2 rounded-md text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-80",
 	{
 		variants: {
 			variant: {
@@ -33,7 +33,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 			type={type ?? "button"}
 			ref={ref}
 			{...props}
-			className={cn(buttonVariants({ variant, size, className }))}
+			className={cn(buttonVariants({ variant, size }), className)}
 		>
 			{children}
 		</button>
