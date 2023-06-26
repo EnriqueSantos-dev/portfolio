@@ -21,14 +21,14 @@ function Card({
 	};
 }) {
 	return (
-		<div className="relative overflow-hidden rounded-lg bg-neutral-100/60 ring-1 ring-neutral-300/80 ring-offset-[3px] ring-offset-neutral-200 backdrop-blur-lg dark:bg-neutral-900/60 dark:ring-neutral-600 dark:ring-offset-neutral-800">
-			<div className="relative aspect-video shadow-sm">
+		<div className="relative overflow-hidden rounded-lg bg-neutral-100/60 ring-1 ring-neutral-300/80 ring-offset-[3px] ring-offset-neutral-200 backdrop-blur-lg dark:bg-neutral-900/80 dark:ring-neutral-600 dark:ring-offset-neutral-800">
+			<div className="relative aspect-video rounded-t-lg shadow-sm">
 				<Image
 					src={backgroundCover.url}
 					fill
 					sizes="400px"
 					alt="projeto thumbnail cover"
-					className="bg-contain bg-top transition-transform  hover:scale-110"
+					className="bg-contain bg-top transition-transform hover:scale-110"
 				/>
 			</div>
 
@@ -59,7 +59,7 @@ function Card({
 					<ArrowUpRight size={18} />
 				</Link>
 
-				<p className="line-clamp-3 text-ellipsis text-sm/6" title={description}>
+				<p className="line-clamp-2 text-ellipsis text-sm/6" title={description}>
 					{description}
 				</p>
 
