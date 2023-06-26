@@ -1,11 +1,13 @@
 "use client";
 
-import { GetProjectsResponse } from "@/types";
-import { CardProject } from "./card-project/card";
-import { Button } from "./ui";
 import { useGetProjects } from "@/hooks/useGetProjects";
-import { useState } from "react";
 import { LIMITE_PROJECTS } from "@/services/get-projects";
+import { GetProjectsResponse } from "@/types";
+import { useQueryClient } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
+import { CardProject } from "./card-project/card";
+import CardProjectSkeleton from "./card-project/skeleton";
+import { Button } from "./ui";
 
 type DictionaryProjects = {
 	heading: string;
@@ -19,19 +21,53 @@ type DictionaryProjects = {
 type ProjectsProps = {
 	sectionId: string;
 	dictionary: DictionaryProjects;
-	projects: GetProjectsResponse;
+	projects?: GetProjectsResponse;
+	currentLocale: string;
 };
 
-export function Projects({ sectionId, dictionary, projects }: ProjectsProps) {
-	const [skip, setSkip] = useState(LIMITE_PROJECTS);
-	const query = useGetProjects({ initialData: projects, skip });
+export function Projects({
+	sectionId,
+	dictionary,
+	projects,
+	currentLocale,
+}: ProjectsProps) {
+	const queryClient = useQueryClient();
+	const [paginationInfo, setPaginationInfo] = useState({
+		skip: 0,
+		first: LIMITE_PROJECTS,
+	});
 
-	const hasNextPage = query?.data?.projectsConnection?.pageInfo.hasNextPage;
-	const hasPrevPage = query?.data?.projectsConnection?.pageInfo.hasPreviousPage;
+	const query = useGetProjects({
+		initialData: projects,
+		skip: paginationInfo.skip,
+		first: paginationInfo.first,
+		locale: currentLocale,
+	});
+
+	const hasNextPage =
+		!query?.data?.data.projectsConnection?.pageInfo.hasNextPage;
+	const hasPrevPage =
+		!query?.data?.data.projectsConnection?.pageInfo.hasPreviousPage;
 
 	const handleNextPage = () => {
-		setSkip((prev) => prev + LIMITE_PROJECTS);
+		setPaginationInfo((prev) => ({
+			first: prev.first * 2,
+			skip: prev.skip + prev.first,
+		}));
 	};
+
+	const handlePrevPage = () => {
+		setPaginationInfo((prev) => ({
+			first: prev.first > LIMITE_PROJECTS ? prev.first / 2 : LIMITE_PROJECTS,
+			skip: prev.skip > LIMITE_PROJECTS ? prev.skip - prev.first : 0,
+		}));
+	};
+
+	useEffect(() => {
+		queryClient.invalidateQueries({
+			queryKey: ["projects", paginationInfo.skip, paginationInfo.first],
+		});
+	}, [paginationInfo, queryClient]);
 
 	return (
 		<section id={sectionId} className="space-y-16">
@@ -46,25 +82,42 @@ export function Projects({ sectionId, dictionary, projects }: ProjectsProps) {
 			</div>
 
 			<div className="grid grid-cols-[repeat(auto-fit,minmax(350px,400px))] place-content-center gap-5 drop-shadow-projectShadowLight dark:drop-shadow-projectShadowDark">
-				{projects?.data?.projects?.map((project) => (
-					<CardProject
-						key={project.id}
-						{...project}
-						dictionary={{
-							button: dictionary.card.button,
-							techs: dictionary.card.techs,
-						}}
-					/>
-				))}
+				{(query.isFetching || query.isLoading) &&
+					Array.from({ length: LIMITE_PROJECTS }).map((_, index) => (
+						<CardProjectSkeleton key={index} />
+					))}
+
+				{!query.isFetching &&
+					query.data &&
+					query.data.data.projectsConnection.edges.map(({ node }) => (
+						<CardProject
+							key={node.id}
+							{...node}
+							dictionary={{
+								button: dictionary.card.button,
+								techs: dictionary.card.techs,
+							}}
+						/>
+					))}
 			</div>
 
-			<div className="mx-auto grid w-52 grid-cols-2 justify-end gap-3">
-				{hasPrevPage && <Button variant="neutral">Prev</Button>}
-				{hasNextPage && (
-					<Button variant="neutral" onClick={handleNextPage}>
-						Next
-					</Button>
-				)}
+			<div className="flex justify-center gap-3">
+				<Button
+					variant="neutral"
+					className="w-24"
+					disabled={!!hasPrevPage}
+					onClick={handlePrevPage}
+				>
+					Prev
+				</Button>
+				<Button
+					variant="neutral"
+					onClick={handleNextPage}
+					className="w-24"
+					disabled={hasNextPage}
+				>
+					Next
+				</Button>
 			</div>
 		</section>
 	);
