@@ -1,9 +1,11 @@
 "use client";
 
-import { useScroll, motion, useSpring } from "framer-motion";
-import React from "react";
+import { useMenu } from "@/contexts/menu";
+import { cn } from "@/utils/cn";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 export function ScrollStatePageIndicator() {
+	const { isMenuOpen } = useMenu();
 	const { scrollYProgress } = useScroll();
 	const scaleX = useSpring(scrollYProgress);
 
@@ -11,7 +13,13 @@ export function ScrollStatePageIndicator() {
 		<motion.div
 			role="progressbar"
 			aria-label="Page scroll progress indicator"
-			className="fixed left-0 top-[72px] z-[5px] h-1 w-full origin-left rounded-full bg-hightLightGradient"
+			className={cn(
+				"fixed left-0 top-[72px] z-10 h-1 w-full origin-left rounded-lg bg-gradient-to-r to-amber-500 from-red-500",
+				{
+					visible: !isMenuOpen,
+					invisible: isMenuOpen,
+				}
+			)}
 			style={{ scaleX }}
 		/>
 	);
