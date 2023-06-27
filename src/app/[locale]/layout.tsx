@@ -8,12 +8,13 @@ import { MobileMenu } from "@/components/mobile-menu";
 import { seoConfig } from "@/config/seo-site";
 import { MenuProvider } from "@/contexts/menu";
 import { Locale, getDictionary, i18n } from "@/i18n";
+import { getNormalizedLocale } from "@/utils/get-normalized-locale";
 import { mapperDictValuesFromKey } from "@/utils/mappers-i18n";
+import { Analytics } from "@vercel/analytics/react";
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ReactNode } from "react";
 import "../globals.css";
-import { getNormalizedLocale } from "@/utils/get-normalized-locale";
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -69,6 +70,8 @@ export default async function RootLayout({
 					{children}
 					<Footer />
 				</Providers>
+
+				<Analytics />
 			</body>
 		</html>
 	);
