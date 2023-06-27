@@ -5,25 +5,11 @@ import { AboutCard } from "./about-card-animated";
 import LampImg from "@/assets/lamp-3d.png";
 import { useRef } from "react";
 import { AnimatePresence, useInView, motion } from "framer-motion";
-
-type DictionaryAbout = {
-	heading: string;
-	paragraph: string;
-	cards: {
-		freelancer: {
-			label: string;
-			experience: string;
-		};
-		student: {
-			label: string;
-			experience: null;
-		};
-	};
-};
+import { Dictionary } from "@/utils/mappers-i18n";
 
 type AboutProps = {
 	sectionId: string;
-	dictionary: DictionaryAbout;
+	dictionary: Dictionary["About"];
 };
 
 export function About({ dictionary, sectionId }: AboutProps) {

@@ -3,24 +3,16 @@
 import { useGetProjects } from "@/hooks/useGetProjects";
 import { LIMITE_PROJECTS } from "@/services/get-projects";
 import { GetProjectsResponse } from "@/types";
+import { Dictionary } from "@/utils/mappers-i18n";
 import { useQueryClient } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import { CardProject } from "./card-project/card";
 import CardProjectSkeleton from "./card-project/skeleton";
 import { Button } from "./ui";
 
-type DictionaryProjects = {
-	heading: string;
-	subheading: string;
-	card: {
-		button: string;
-		techs: string;
-	};
-};
-
 type ProjectsProps = {
 	sectionId: string;
-	dictionary: DictionaryProjects;
+	dictionary: Dictionary["Projects"];
 	projects?: GetProjectsResponse;
 	currentLocale: string;
 };

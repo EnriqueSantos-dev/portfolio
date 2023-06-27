@@ -4,13 +4,11 @@ import { skills } from "@/constants/skills-array";
 import { AnimatePresence, inView, useInView } from "framer-motion";
 import { useRef } from "react";
 import CardSkillTech from "./card-skill-tech";
+import { Dictionary } from "@/utils/mappers-i18n";
 
 type SkillsProps = {
 	sectionId: string;
-	dictionary: {
-		heading: string;
-		subheading: string;
-	};
+	dictionary: Dictionary["Skills"];
 };
 
 export function Skills({ dictionary, sectionId }: SkillsProps) {

@@ -1,26 +1,14 @@
 "use client";
 
+import { buttonVariants } from "@/components/ui/button";
+import { Dictionary } from "@/utils/mappers-i18n";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
-import { buttonVariants } from "@/components/ui/button";
-
-export type DictionaryHero = {
-	heading: {
-		hello: string;
-		myNameIs: string;
-		iAm: string;
-	};
-	paragraph: string;
-	buttons: {
-		downloadCV: string;
-		contactMe: string;
-	};
-};
 
 type HeroProps = {
-	dictionary: DictionaryHero;
+	dictionary: Dictionary["HeroDetails"];
 };
 
 export function Hero({ dictionary }: HeroProps) {

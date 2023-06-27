@@ -2,26 +2,15 @@
 
 import NavIcon from "@/assets/nav-contact.svg";
 import { Button, Input, TextArea } from "@/components/ui";
+import { Dictionary } from "@/utils/mappers-i18n";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import { Send } from "lucide-react";
 import Image from "next/image";
 import { useRef } from "react";
 
-type DictionaryContact = {
-	heading: string;
-	subheading: string;
-	form: {
-		name: string;
-		namePlaceholder: string;
-		message: string;
-		messagePlaceholder: string;
-		submit: string;
-	};
-};
-
 type ContactProps = {
 	sectionId: string;
-	dictionary: DictionaryContact;
+	dictionary: Dictionary["Contact"];
 };
 
 export function Contact({ sectionId, dictionary }: ContactProps) {
