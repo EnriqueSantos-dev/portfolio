@@ -1,9 +1,8 @@
 import { LanguagePick } from "@/components/language-picker";
 import { ToggleTheme } from "@/components/toggle-theme";
-import { socialLinks } from "@/constants/social";
 import Link from "next/link";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { ActiveMobileMenuButton } from "./mobile-menu/active-menu-button";
+import { SocialLinks } from "./social-links";
 
 export type MainNavProps = {
 	links: Record<"link", string>[];
@@ -40,24 +39,10 @@ export function MainNav({ links }: MainNavProps) {
 					<LanguagePick />
 					<ToggleTheme />
 				</div>
-
 				<ActiveMobileMenuButton />
-
-				<Link
-					href={socialLinks.github}
-					target="_blank"
-					className="hidden h-9 cursor-pointer items-center gap-2 rounded-md border border-neutral-200 p-2 font-medium text-neutral-900 ring-amber-500 ring-offset-neutral-50 transition-colors hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-offset-2 dark:border-neutral-800 dark:bg-neutral-950/50 dark:text-white dark:hover:border-zinc-700 dark:hover:bg-neutral-800 dark:focus-visible:ring-offset-neutral-900 lg:inline-flex"
-				>
-					<BsGithub size={20} fill="currentColor" />
-				</Link>
-
-				<Link
-					href={socialLinks.linkedin}
-					target="_blank"
-					className="hidden h-9 cursor-pointer items-center gap-2 rounded-md border border-neutral-200 p-2 font-medium text-neutral-900 ring-amber-500 ring-offset-neutral-50 transition-colors hover:bg-neutral-100 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-offset-2 dark:border-neutral-800 dark:bg-neutral-950/50 dark:text-white dark:hover:border-zinc-700 dark:hover:bg-neutral-800  dark:focus-visible:ring-offset-neutral-900 lg:inline-flex"
-				>
-					<BsLinkedin size={18} fill="currentColor" />
-				</Link>
+				<div className="hidden lg:block">
+					<SocialLinks />
+				</div>
 			</div>
 		</nav>
 	);

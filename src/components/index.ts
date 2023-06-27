@@ -13,3 +13,4 @@ export * from "./scroll-state-page-indicator";
 export * from "./skills";
 export * from "./toggle-theme";
 export * from "./footer";
+export * from "./social-links";
