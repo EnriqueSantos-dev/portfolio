@@ -61,7 +61,10 @@ export default async function RootLayout({
 							<ScrollStatePageIndicator />
 						</header>
 
-						<MobileMenu links={linksNavBar} />
+						<MobileMenu
+							links={linksNavBar}
+							dictionary={mapperDictValuesFromKey(dictionary, "MobileMenu")}
+						/>
 					</MenuProvider>
 					{children}
 					<Footer />

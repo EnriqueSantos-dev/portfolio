@@ -3,14 +3,16 @@
 import { ToggleTheme } from "@/components";
 import { useMenu } from "@/contexts/menu";
 import { cn } from "@/utils/cn";
+import { Dictionary } from "@/utils/mappers-i18n";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 
 type MobileMenuProps = {
 	links: Record<"link", string>[];
+	dictionary: Dictionary["MobileMenu"];
 };
 
-export function MobileMenu({ links }: MobileMenuProps) {
+export function MobileMenu({ links, dictionary }: MobileMenuProps) {
 	const { isMenuOpen, toggleMenu } = useMenu();
 	const handleClickInLink = () => toggleMenu();
 
@@ -49,7 +51,7 @@ export function MobileMenu({ links }: MobileMenuProps) {
 						<div className="space-y-4">
 							<div className="flex flex-col gap-3 rounded-md border border-neutral-300 bg-neutral-100 p-4 dark:border-neutral-800 dark:bg-neutral-950">
 								<span className="border-b pb-1 font-medium dark:border-neutral-900 dark:text-neutral-300">
-									Translations
+									{dictionary.languageSelector}
 								</span>
 
 								<ul className="space-y-4 text-sm text-neutral-900 dark:text-neutral-100">
@@ -77,7 +79,7 @@ export function MobileMenu({ links }: MobileMenuProps) {
 
 							<div className="flex items-center justify-between rounded-md border border-neutral-300 bg-neutral-100 p-4 dark:border-neutral-800 dark:bg-neutral-950">
 								<span className="text-sm font-medium text-neutral-900 dark:text-neutral-300">
-									Appearance
+									{dictionary.themeSelector}
 								</span>
 
 								<ToggleTheme />
