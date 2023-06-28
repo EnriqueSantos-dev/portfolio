@@ -77,7 +77,7 @@ export function Hero({ dictionary }: HeroProps) {
 								</a>
 
 								<Link
-									href="#contact"
+									href={`#${dictionary.buttons.contactMeHref}`}
 									className={buttonVariants({
 										variant: "gradient",
 										size: "lg",

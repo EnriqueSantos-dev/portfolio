@@ -28,7 +28,8 @@
 		"paragraph": "Estudante de Ciência da computação. Criando soluções de software desde 2022.",
 		"buttons": {
 			"downloadCV": "baixar cv",
-			"contactMe": "me contate"
+			"contactMe": "me contate",
+			"contactMeHref": "contato"
 		}
 	},
 	"About": {

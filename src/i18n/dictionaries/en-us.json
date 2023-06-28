@@ -28,7 +28,8 @@
 		"paragraph": "Student science computer. Building software solutions since 2022.",
 		"buttons": {
 			"downloadCV": "download CV",
-			"contactMe": "contact-me"
+			"contactMe": "contact-me",
+			"contactMeHref": "contato"
 		}
 	},
 	"About": {
