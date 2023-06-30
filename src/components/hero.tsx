@@ -114,11 +114,11 @@ export function Hero({ dictionary }: HeroProps) {
 						>
 							<div className="relative h-80 w-80 border-spacing-6 animate-morph overflow-hidden ring-2 ring-amber-500 ring-offset-2 dark:ring-offset-neutral-900">
 								<Image
-									src="https://github.com/enriquesantos-dev.png"
+									src="/assets/me.png"
 									alt="avatar"
 									fill
-									priority
 									sizes="400px"
+									priority
 									quality={100}
 								/>
 							</div>

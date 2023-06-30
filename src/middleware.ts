@@ -25,6 +25,7 @@ export function middleware(request: NextRequest) {
 	// // If you have one
 	if (
 		[
+			"/assets/me.png",
 			"/assets/og.png",
 			"/robots.txt",
 			"/about-illustration.svg",
