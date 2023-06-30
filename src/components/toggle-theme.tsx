@@ -1,8 +1,5 @@
 "use client";
 
-import useTheme from "@/hooks/useTheme";
-import { cn } from "@/utils/cn";
-import * as Switch from "@radix-ui/react-switch";
 import {
 	TooltipArrow,
 	TooltipContent,
@@ -10,10 +7,19 @@ import {
 	TooltipProvider,
 	TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { cn } from "@/utils/cn";
+import * as Switch from "@radix-ui/react-switch";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export function ToggleTheme() {
-	const [theme, toggleTheme] = useTheme();
+	const [mounted, setMounted] = useState(false);
+	const { theme, setTheme } = useTheme();
 	const isDark = theme === "dark";
+
+	useEffect(() => setMounted(true), []);
+
+	if (!mounted) return null;
 
 	return (
 		<TooltipProvider delayDuration={300}>
@@ -24,7 +30,9 @@ export function ToggleTheme() {
 						className={cn(
 							"group bg-purple relative flex h-6 w-12 overflow-hidden items-start focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-amber-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-zinc-900 dark:border-zinc-800 border dark:hover:bg-zinc-800 dark:hover:border-zinc-700 hover:bg-neutral-100 transition-colors dark:bg-neutral-950/50 dark:backdrop-blur-md rounded-full"
 						)}
-						onCheckedChange={toggleTheme}
+						onCheckedChange={() =>
+							setTheme(theme === "dark" ? "light" : "dark")
+						}
 					>
 						<Switch.Thumb
 							asChild
