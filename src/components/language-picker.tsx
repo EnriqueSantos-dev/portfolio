@@ -16,7 +16,10 @@ export function LanguagePick() {
 		<NavigationMenu>
 			<NavigationMenuList>
 				<NavigationMenuItem>
-					<NavigationMenuTrigger className="flex items-center gap-x-1 rounded-md p-1 text-neutral-900 dark:text-neutral-100">
+					<NavigationMenuTrigger
+						aria-label="open navigation menu languages"
+						className="flex items-center gap-x-1 rounded-md p-1 text-neutral-900 dark:text-neutral-100"
+					>
 						<Languages size="20" />
 					</NavigationMenuTrigger>
 					<NavigationMenuContent>
