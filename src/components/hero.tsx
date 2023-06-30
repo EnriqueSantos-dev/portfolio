@@ -116,9 +116,9 @@ export function Hero({ dictionary }: HeroProps) {
 								<Image
 									src="/assets/me.png"
 									alt="avatar"
-									fill
-									sizes="400px"
 									priority
+									width={320}
+									height={320}
 									quality={100}
 								/>
 							</div>
