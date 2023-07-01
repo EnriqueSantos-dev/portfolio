@@ -100,7 +100,7 @@ export function Projects({
 					disabled={!!hasPrevPage}
 					onClick={handlePrevPage}
 				>
-					Prev
+					{dictionary.pagination.previous}
 				</Button>
 				<Button
 					variant="neutral"
@@ -108,7 +108,7 @@ export function Projects({
 					className="w-24"
 					disabled={hasNextPage}
 				>
-					Next
+					{dictionary.pagination.next}
 				</Button>
 			</div>
 		</section>

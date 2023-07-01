@@ -56,6 +56,10 @@
 		"card": {
 			"button": "Ver projeto",
 			"techs": "Tecnologias e ferramentas"
+		},
+		"pagination": {
+			"previous": "Anterior",
+			"next": "Próximo"
 		}
 	},
 	"Contact": {

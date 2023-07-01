@@ -56,6 +56,10 @@
 		"card": {
 			"button": "Try it out",
 			"techs": "Tech stack and tools"
+		},
+		"pagination": {
+			"previous": "Prev",
+			"next": "Next"
 		}
 	},
 	"Contact": {
