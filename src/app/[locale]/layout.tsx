@@ -26,13 +26,6 @@ export async function generateMetadata({
 }: {
 	params: { locale: string };
 }): Promise<Metadata> {
-	if (!i18n.locales.includes(params.locale as Locale)) {
-		return {
-			title: "404 - Page Not Found",
-			description: "This page could not be found.",
-		};
-	}
-
 	return seoConfig[params.locale as Locale];
 }
 
