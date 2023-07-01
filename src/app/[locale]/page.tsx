@@ -22,6 +22,7 @@ export default async function Home({ params }: { params: { locale: string } }) {
 		getProjects(locale),
 		getDictionary(params.locale as Locale),
 	]);
+	const linksNavBar = mapperDictValuesFromKey(dictionary, "NavBarLinks").links;
 
 	return (
 		<main className="dark:text-white">
@@ -29,28 +30,20 @@ export default async function Home({ params }: { params: { locale: string } }) {
 				<Hero dictionary={mapperDictValuesFromKey(dictionary, "HeroDetails")} />
 				<About
 					dictionary={mapperDictValuesFromKey(dictionary, "About")}
-					sectionId={
-						mapperDictValuesFromKey(dictionary, "NavBarLinks").links[0].link
-					}
+					sectionId={linksNavBar[0].link}
 				/>
 				<Skills
-					sectionId={
-						mapperDictValuesFromKey(dictionary, "NavBarLinks").links[1].link
-					}
+					sectionId={linksNavBar[1].link}
 					dictionary={mapperDictValuesFromKey(dictionary, "Skills")}
 				/>
 				<Projects
 					projects={projects}
 					currentLocale={locale}
-					sectionId={
-						mapperDictValuesFromKey(dictionary, "NavBarLinks").links[2].link
-					}
+					sectionId={linksNavBar[2].link}
 					dictionary={mapperDictValuesFromKey(dictionary, "Projects")}
 				/>
 				<Contact
-					sectionId={
-						mapperDictValuesFromKey(dictionary, "NavBarLinks").links[3].link
-					}
+					sectionId={linksNavBar[3].link}
 					dictionary={mapperDictValuesFromKey(dictionary, "Contact")}
 				/>
 			</div>
