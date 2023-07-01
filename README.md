@@ -20,7 +20,7 @@ Este projeto foi criado com o intuito de mostrar meus projetos e habilidades com
 - Animações
 - I18n (pt-BR e en-US)
 - SSR (Server Side Rendering)
-- SSG (Static Site Generation)
+- ISR (Incremental Static Regeneration)
 - Paginação (Client Side)
 
 ## Como rodar o projeto
