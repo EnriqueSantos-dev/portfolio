@@ -92,7 +92,6 @@ export function Contact({ sectionId, dictionary }: ContactProps) {
 								height={450}
 								alt="3d icon rocket"
 								className="inline-block drop-shadow-gradientShadow"
-								quality={100}
 							/>
 						</motion.div>
 					</div>

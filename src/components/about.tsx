@@ -96,7 +96,6 @@ export function About({ dictionary, sectionId }: AboutProps) {
 								width={400}
 								height={400}
 								className="rounded-xl drop-shadow-gradientShadow"
-								priority
 							/>
 						</motion.div>
 					</motion.div>
