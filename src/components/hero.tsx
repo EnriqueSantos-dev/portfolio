@@ -1,6 +1,7 @@
 "use client";
 
 import { buttonVariants } from "@/components/ui/button";
+import { socialLinks } from "@/constants/social";
 import { Dictionary } from "@/utils/mappers-i18n";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import Image from "next/image";
@@ -114,11 +115,10 @@ export function Hero({ dictionary }: HeroProps) {
 						>
 							<div className="relative h-80 w-80 border-spacing-6 animate-morph overflow-hidden ring-2 ring-amber-500 ring-offset-2 dark:ring-offset-neutral-900">
 								<Image
-									src="/assets/me.png"
+									src={`${socialLinks.github}.png`}
 									alt="avatar"
+									fill
 									priority
-									width={320}
-									height={320}
 									quality={100}
 								/>
 							</div>
