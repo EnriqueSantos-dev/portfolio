@@ -1,14 +1,16 @@
 import { LanguagePick } from "@/components/language-picker";
+import { MobileMenu } from "@/components/mobile-menu";
 import { ToggleTheme } from "@/components/toggle-theme";
+import { Dictionary } from "@/utils/mappers-i18n";
 import Link from "next/link";
-import { ActiveMobileMenuButton } from "./mobile-menu/active-menu-button";
 import { SocialLinks } from "./social-links";
 
 export type MainNavProps = {
 	links: Record<"link", string>[];
+	mobileMenuDictionary: Dictionary["MobileMenu"];
 };
 
-export function MainNav({ links }: MainNavProps) {
+export function MainNav({ links, mobileMenuDictionary }: MainNavProps) {
 	return (
 		<nav className="container flex h-[inherit] items-center justify-between py-2 text-neutral-900 dark:text-white">
 			<Link
@@ -39,7 +41,7 @@ export function MainNav({ links }: MainNavProps) {
 					<LanguagePick />
 					<ToggleTheme />
 				</div>
-				<ActiveMobileMenuButton />
+				<MobileMenu links={links} dictionary={mobileMenuDictionary} />
 				<div className="hidden lg:block">
 					<SocialLinks />
 				</div>

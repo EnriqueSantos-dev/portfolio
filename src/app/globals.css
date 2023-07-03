@@ -28,3 +28,11 @@ html:is(.dark) #gradient_svg stop {
 main > div > *:not(:first-child) {
 	padding-block: 7.5rem;
 }
+
+.progress-indicator {
+	visibility: visible;
+}
+
+[data-menu-open="true"] .progress-indicator {
+	visibility: hidden;
+}

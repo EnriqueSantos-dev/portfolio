@@ -4,9 +4,7 @@ import {
 	Providers,
 	ScrollStatePageIndicator,
 } from "@/components";
-import { MobileMenu } from "@/components/mobile-menu";
 import { seoConfig } from "@/config/seo-site";
-import { MenuProvider } from "@/contexts/menu";
 import { Locale, getDictionary, i18n } from "@/i18n";
 import { getNormalizedLocale } from "@/utils/get-normalized-locale";
 import { mapperDictValuesFromKey } from "@/utils/mappers-i18n";
@@ -49,22 +47,21 @@ export default async function RootLayout({
 				className={`${inter.className} bg-neutral-50 transition-colors dark:bg-neutral-900`}
 			>
 				<Providers>
-					<MenuProvider>
-						<header className="fixed top-0 z-10 h-[72px] w-full border-b border-neutral-200 bg-neutral-50/90 backdrop-blur-md dark:border-neutral-800 dark:bg-neutral-900/90">
-							<MainNav links={linksNavBar} />
-							<ScrollStatePageIndicator />
-						</header>
-
-						<MobileMenu
+					<header className="fixed top-0 z-10 h-[72px] w-full border-b border-neutral-200 bg-neutral-50/90 backdrop-blur-md dark:border-neutral-800 dark:bg-neutral-900/90">
+						<MainNav
 							links={linksNavBar}
-							dictionary={mapperDictValuesFromKey(dictionary, "MobileMenu")}
+							mobileMenuDictionary={mapperDictValuesFromKey(
+								dictionary,
+								"MobileMenu"
+							)}
 						/>
-					</MenuProvider>
+						<ScrollStatePageIndicator />
+					</header>
 					{children}
 					<Footer />
 				</Providers>
-
-				<Analytics />
+				<Analytics mode="production" />
+				<div id="portal" />
 			</body>
 		</html>
 	);
