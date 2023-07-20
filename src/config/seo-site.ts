@@ -41,7 +41,7 @@ const generateCommonMetadata = (locale: Locale): Metadata => {
 		},
 		twitter: {
 			card: "summary_large_image",
-			creatorId: "@Enrique_S_D_O",
+			creator: "@Enrique_S_D_O",
 			site: "@Enrique_S_D_O",
 			images: generateImagesData(locale),
 			...generateSiteTitleAndDesc(locale),
