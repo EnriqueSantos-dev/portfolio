@@ -21,7 +21,7 @@ const generateSiteTitleAndDesc = (locale: Locale) => {
 
 const generateImagesData = (locale: Locale) => {
 	return {
-		url: "assets/og.png",
+		url: locale === "pt-br" ? "assets/og.png" : "assets/og-en.png",
 		alt:
 			locale === "pt-br"
 				? "Portfólio de Enrique Santos"
