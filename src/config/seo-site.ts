@@ -5,7 +5,7 @@ import { Locale } from "@/i18n";
 import { socialLinks } from "@/constants/social";
 import { getNormalizedLocale } from "@/utils/get-normalized-locale";
 
-const siteUrl = "https://enriquesantos-dev.vercel.app";
+const siteUrl = new URL("https://enriquesantos-dev.vercel.app");
 
 const generateSiteTitleAndDesc = (locale: Locale) => {
 	return locale === "pt-br"
@@ -31,9 +31,9 @@ const generateImagesData = (locale: Locale) => {
 
 const generateCommonMetadata = (locale: Locale): Metadata => {
 	return {
-		metadataBase: new URL("https://enriquesantos-dev.vercel.app"),
+		metadataBase: siteUrl,
 		alternates: {
-			canonical: "/",
+			canonical: siteUrl,
 			languages: {
 				"pt-BR": "/pt-br",
 				"en-US": "/en-us",
@@ -51,7 +51,7 @@ const generateCommonMetadata = (locale: Locale): Metadata => {
 			...generateSiteTitleAndDesc(locale),
 			siteName: generateSiteTitleAndDesc(locale).title,
 			locale: getNormalizedLocale(locale),
-			url: siteUrl,
+			url: locale === "pt-br" ? `${siteUrl}pt-br` : `${siteUrl}en-us`,
 			images: [{ ...generateImagesData(locale), width: 1200, height: 630 }],
 		},
 		authors: [
