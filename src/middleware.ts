@@ -27,6 +27,7 @@ export function middleware(request: NextRequest) {
 		[
 			"/assets/me.png",
 			"/assets/og.png",
+			"/assets/og-en.png",
 			"/robots.txt",
 			"/about-illustration.svg",
 			"/enrique-santos-de-oliveira-curriculum.pdf",
