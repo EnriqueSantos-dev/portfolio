@@ -3,8 +3,8 @@ import { GetProjectsResponse } from "@/types";
 export const LIMITE_PROJECTS = 6;
 
 const query = `
-  query getAllProjects ($locale: [Locale!]!, $skip: Int!, $first: Int!) {
-    projectsConnection(locales: $locale, skip: $skip, first: $first) {
+  query getAllProjects ($locale: [Locale!]!, $skip: Int!, $first: Int!, $orderBy: ProjectOrderByInput!) {
+    projectsConnection(locales: $locale, skip: $skip, first: $first, orderBy: $orderBy) {
 			edges {
 				node {
 					id
@@ -44,7 +44,7 @@ export async function getAllProjects(
 
 	const body = {
 		query,
-		variables: { locale: [locale], skip, first },
+		variables: { locale: [locale], skip, first, orderBy: "relevance_ASC" },
 	};
 
 	const res = await fetch(process.env.HYGRAPH_URL as string, {
@@ -52,7 +52,7 @@ export async function getAllProjects(
 		headers,
 		body: JSON.stringify(body),
 		next: {
-			revalidate: 60 * 60 * 24, // 1 day
+			revalidate: 60 * 60 * 24,
 		},
 	});
 

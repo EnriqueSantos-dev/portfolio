@@ -23,7 +23,7 @@ export type Project = {
 	};
 	deployLink: string;
 	repositoryUrl: string;
-	relevance: "high" | "medium" | "small";
+	relevance: number;
 };
 
 export type PaginationInfosGetProjects = {
