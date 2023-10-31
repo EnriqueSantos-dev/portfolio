@@ -1,4 +1,5 @@
 import { Copyright } from "lucide-react";
+
 import { SocialLinks } from "./social-links";
 
 export function Footer() {

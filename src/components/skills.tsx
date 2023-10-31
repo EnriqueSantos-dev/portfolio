@@ -1,9 +1,13 @@
 "use client";
 
-import { skills } from "@/constants/skills-array";
-import { Dictionary } from "@/utils/mappers-i18n";
-import { AnimatePresence, useInView } from "framer-motion";
 import { useRef } from "react";
+
+import { AnimatePresence, useInView } from "framer-motion";
+
+import { skills } from "@/constants/skills-array";
+
+import { Dictionary } from "@/utils/mappers-i18n";
+
 import CardSkillTech from "./card-skill-tech";
 
 type SkillsProps = {

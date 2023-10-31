@@ -1,7 +1,8 @@
 "use client";
 
-import useGetBoundingClient from "@/hooks/useGetBoundingClient";
 import React, { ReactNode } from "react";
+
+import useGetBoundingClient from "@/hooks/useGetBoundingClient";
 
 export function AboutCard({ children }: { children: ReactNode }) {
 	const cardRef = React.useRef<HTMLDivElement>(null);

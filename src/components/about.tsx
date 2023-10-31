@@ -1,11 +1,16 @@
 "use client";
 
-import Image from "next/image";
-import { AboutCard } from "./about-card-animated";
-import LampImg from "@/assets/lamp-3d.png";
 import { useRef } from "react";
-import { AnimatePresence, useInView, motion } from "framer-motion";
+
+import Image from "next/image";
+
+import { AnimatePresence, motion,useInView } from "framer-motion";
+
 import { Dictionary } from "@/utils/mappers-i18n";
+
+import LampImg from "@/assets/lamp-3d.png";
+
+import { AboutCard } from "./about-card-animated";
 
 type AboutProps = {
 	sectionId: string;

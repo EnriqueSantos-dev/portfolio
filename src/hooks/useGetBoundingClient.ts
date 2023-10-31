@@ -1,6 +1,6 @@
 "use client";
 
-import { RefObject, useCallback, useEffect, useState } from "react";
+import { RefObject, useEffect, useState } from "react";
 
 const useGetBoundingClient = <T extends HTMLElement>(ref: RefObject<T>) => {
 	const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });

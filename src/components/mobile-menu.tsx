@@ -1,5 +1,13 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+
+import Link from "next/link";
+
+import { AnimatePresence, motion } from "framer-motion";
+import { AlignRight, X } from "lucide-react";
+
 import { ToggleTheme } from "@/components";
 import {
 	Tooltip,
@@ -8,13 +16,9 @@ import {
 	TooltipProvider,
 	TooltipTrigger,
 } from "@/components/ui";
+
 import { cn } from "@/utils/cn";
 import { Dictionary } from "@/utils/mappers-i18n";
-import { AnimatePresence, motion } from "framer-motion";
-import { AlignRight, X } from "lucide-react";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { createPortal } from "react-dom";
 
 type MobileMenuProps = {
 	links: Record<"link", string>[];

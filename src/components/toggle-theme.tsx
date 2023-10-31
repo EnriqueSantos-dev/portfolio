@@ -1,16 +1,20 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
+import { useTheme } from "next-themes";
+
+import * as Switch from "@radix-ui/react-switch";
+
 import {
+	Tooltip as TooltipPrimitive,
 	TooltipArrow,
 	TooltipContent,
-	Tooltip as TooltipPrimitive,
 	TooltipProvider,
 	TooltipTrigger,
 } from "@/components/ui/tooltip";
+
 import { cn } from "@/utils/cn";
-import * as Switch from "@radix-ui/react-switch";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
 export function ToggleTheme() {
 	const [mounted, setMounted] = useState(false);

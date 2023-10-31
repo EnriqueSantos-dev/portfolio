@@ -1,8 +1,9 @@
 "use client";
 
-import { cn } from "@/utils/cn";
-import { AnimationProps, motion } from "framer-motion";
 import Image from "next/image";
+
+import { AnimationProps, motion } from "framer-motion";
+
 import {
 	Tooltip,
 	TooltipArrow,
@@ -10,6 +11,8 @@ import {
 	TooltipProvider,
 	TooltipTrigger,
 } from "@/components/ui";
+
+import { cn } from "@/utils/cn";
 
 type CardSkillTechProps = {
 	tooltip: string;

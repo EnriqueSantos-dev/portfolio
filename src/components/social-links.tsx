@@ -1,6 +1,8 @@
-import { socialLinks } from "@/constants/social";
-import { Github, Linkedin } from "lucide-react";
 import Link from "next/link";
+
+import { Github, Linkedin } from "lucide-react";
+
+import { socialLinks } from "@/constants/social";
 
 export function SocialLinks() {
 	return (

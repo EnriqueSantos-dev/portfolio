@@ -1,18 +1,25 @@
+import "../globals.css";
+
+import { ReactNode } from "react";
+
+import { Metadata } from "next";
+import { Inter } from "next/font/google";
+
+import { Analytics } from "@vercel/analytics/react";
+
 import {
 	Footer,
 	MainNav,
 	Providers,
 	ScrollStatePageIndicator,
 } from "@/components";
-import { seoConfig } from "@/config/seo-site";
-import { Locale, getDictionary, i18n } from "@/i18n";
+
+import { getDictionary, i18n,Locale } from "@/i18n";
+
 import { getNormalizedLocale } from "@/utils/get-normalized-locale";
 import { mapperDictValuesFromKey } from "@/utils/mappers-i18n";
-import { Analytics } from "@vercel/analytics/react";
-import { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { ReactNode } from "react";
-import "../globals.css";
+
+import { seoConfig } from "@/config/seo-site";
 
 const inter = Inter({
 	subsets: ["latin"],

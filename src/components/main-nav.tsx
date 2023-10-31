@@ -1,8 +1,11 @@
+import Link from "next/link";
+
 import { LanguagePick } from "@/components/language-picker";
 import { MobileMenu } from "@/components/mobile-menu";
 import { ToggleTheme } from "@/components/toggle-theme";
+
 import { Dictionary } from "@/utils/mappers-i18n";
-import Link from "next/link";
+
 import { SocialLinks } from "./social-links";
 
 export type MainNavProps = {

@@ -1,25 +1,27 @@
 import { About, Contact, Hero, Projects, Skills } from "@/components";
-import { Locale, getDictionary } from "@/i18n";
+
 import { getAllProjects } from "@/services/get-projects";
+
+import { getDictionary, Locale } from "@/i18n";
+
 import { mapperDictValuesFromKey } from "@/utils/mappers-i18n";
 
-function getFormattedLocaleForHyGraph(locale: string) {
+const getFormattedLocaleForHyGraph = (locale: string) => {
 	const [localeId, localeCountry] = locale.split("-");
-
 	return `${localeId}_${localeCountry.toUpperCase()}`;
-}
+};
 
-async function getProjects(locale: string) {
+const getProjects = async () => {
 	// no throw error in server side rendering if getAllProjects fails to fetch data from API endpoint (it will return undefined)
 	return await getAllProjects()
 		.then((projects) => projects)
 		.catch(() => undefined);
-}
+};
 
 export default async function Home({ params }: { params: { locale: string } }) {
 	const locale = getFormattedLocaleForHyGraph(params.locale);
 	const [projects, dictionary] = await Promise.all([
-		getProjects(locale),
+		getProjects(),
 		getDictionary(params.locale as Locale),
 	]);
 	const linksNavBar = mapperDictValuesFromKey(dictionary, "NavBarLinks").links;

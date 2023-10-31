@@ -1,4 +1,5 @@
 import "server-only";
+
 import type { Locale } from "./config";
 
 // We enumerate all dictionaries here for better linting and typescript support

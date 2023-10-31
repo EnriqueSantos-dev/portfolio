@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { Locale } from "@/i18n";
 
 import { socialLinks } from "@/constants/social";
+
 import { getNormalizedLocale } from "@/utils/get-normalized-locale";
 
 const siteUrl = new URL("https://enriquesantos-dev.vercel.app");

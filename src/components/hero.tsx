@@ -1,12 +1,17 @@
 "use client";
 
-import { buttonVariants } from "@/components/ui/button";
-import { socialLinks } from "@/constants/social";
-import { Dictionary } from "@/utils/mappers-i18n";
-import { AnimatePresence, motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+
+import { AnimatePresence, motion, useInView } from "framer-motion";
+
+import { buttonVariants } from "@/components/ui/button";
+
+import { socialLinks } from "@/constants/social";
+
+import { Dictionary } from "@/utils/mappers-i18n";
 
 type HeroProps = {
 	dictionary: Dictionary["HeroDetails"];

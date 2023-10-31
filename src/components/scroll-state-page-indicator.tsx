@@ -1,6 +1,5 @@
 "use client";
 
-import { cn } from "@/utils/cn";
 import { motion, useScroll, useSpring } from "framer-motion";
 
 export function ScrollStatePageIndicator() {

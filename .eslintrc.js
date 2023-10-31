@@ -1,0 +1,65 @@
+module.exports = {
+	extends: [
+		"plugin:tailwindcss/recommended",
+		"plugin:jsx-a11y/recommended",
+		"next",
+	],
+	parserOptions: {
+		tsconfigRootDir: __dirname,
+		ecmaFeatures: {
+			jsx: true,
+		},
+	},
+	plugins: ["@typescript-eslint", "simple-import-sort", "jsx-a11y"],
+	parser: "@typescript-eslint/parser",
+	rules: {
+		"simple-import-sort/exports": "error",
+		"import/first": "error",
+		"import/newline-after-import": "error",
+		"import/no-duplicates": "error",
+		"tailwindcss/no-custom-classname": "off",
+		"react/jsx-boolean-value": ["error", "never"],
+		"react/jsx-curly-brace-presence": [
+			"error",
+			{
+				props: "never",
+				children: "never",
+			},
+		],
+		"no-unused-vars": "off",
+		"@typescript-eslint/no-unused-vars": [
+			"error",
+			{
+				varsIgnorePattern: "^_",
+				argsIgnorePattern: "^_",
+			},
+		],
+		"react/self-closing-comp": "error",
+		"simple-import-sort/imports": [
+			"error",
+			{
+				groups: [
+					["^@/styles", "\\w?(\\.css|\\.scss)$"],
+					["^react(-dom)?$"],
+					["^next/?(.*)"],
+					["^@?\\w"],
+					["^@/components"],
+					["^@/hooks"],
+					["^@/services"],
+					["^@/i18n"],
+					["^@/constants"],
+					["^@/utils"],
+					["^@/types"],
+					["^"],
+					["^\\."],
+				],
+			},
+		],
+	},
+	settings: {
+		tailwindcss: {
+			calles: ["className", "cn", "clsx"],
+			config: "tailwind.config.js",
+		},
+	},
+};

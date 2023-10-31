@@ -1,5 +1,6 @@
-import { cn } from "@/utils/cn";
 import React from "react";
+
+import { cn } from "@/utils/cn";
 
 export default function CardProjectSkeleton() {
 	const animatePulseStyle =

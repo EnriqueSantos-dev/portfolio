@@ -1,7 +1,8 @@
 "use client";
 
-import { GetProjectsResponse } from "@/types";
 import { useQuery } from "@tanstack/react-query";
+
+import { GetProjectsResponse } from "@/types";
 
 export function useGetProjects({
 	locale = "pt_BR",

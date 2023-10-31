@@ -1,10 +1,14 @@
-import { Project } from "@/types";
-import { ArrowUpRight, GithubIcon } from "lucide-react";
+import { memo } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
+
+import { ArrowUpRight, GithubIcon } from "lucide-react";
+
+import { Project } from "@/types";
+
 import { buttonVariants } from "../ui";
 import { Tag } from "./tag";
-import { memo } from "react";
 
 function Card({
 	name,

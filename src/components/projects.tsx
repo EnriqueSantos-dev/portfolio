@@ -1,11 +1,17 @@
 "use client";
 
-import { useGetProjects } from "@/hooks/useGetProjects";
-import { LIMITE_PROJECTS } from "@/services/get-projects";
-import { GetProjectsResponse } from "@/types";
-import { Dictionary } from "@/utils/mappers-i18n";
-import { useQueryClient } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
+
+import { useQueryClient } from "@tanstack/react-query";
+
+import { useGetProjects } from "@/hooks/useGetProjects";
+
+import { LIMITE_PROJECTS } from "@/services/get-projects";
+
+import { Dictionary } from "@/utils/mappers-i18n";
+
+import { GetProjectsResponse } from "@/types";
+
 import { CardProject } from "./card-project/card";
 import CardProjectSkeleton from "./card-project/skeleton";
 import { Button } from "./ui";
