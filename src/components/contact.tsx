@@ -1,12 +1,19 @@
 "use client";
 
-import NavIcon from "@/assets/nav-contact.svg";
-import { Button, Input, TextArea } from "@/components/ui";
-import { Dictionary } from "@/utils/mappers-i18n";
+import { useRef, useState } from "react";
+
+import Image from "next/image";
+
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import { Send } from "lucide-react";
-import Image from "next/image";
-import { useRef } from "react";
+import toast from "react-hot-toast";
+
+import { Button, Input, TextArea } from "@/components/ui";
+
+import { cn } from "@/utils/cn";
+import { Dictionary } from "@/utils/mappers-i18n";
+
+import NavIcon from "@/assets/nav-contact.svg";
 
 type ContactProps = {
 	sectionId: string;
@@ -14,8 +21,34 @@ type ContactProps = {
 };
 
 export function Contact({ sectionId, dictionary }: ContactProps) {
+	const [isSubmitting, setIsSubmitting] = useState(false);
 	const divRef = useRef<HTMLDivElement | null>(null);
 	const inView = useInView(divRef);
+
+	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+		event.preventDefault();
+		const formData = new FormData(event.currentTarget);
+		const name = formData.get("name");
+		const message = formData.get("message");
+
+		setIsSubmitting(true);
+		const promise = fetch("/api/mails/send", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ name, message }),
+		}).finally(() => {
+			setIsSubmitting(false);
+		});
+
+		toast.promise(promise, {
+			success: "Obrigado por me enviar uma mensagem 😃",
+			error:
+				"Parece que ocorreu algum erro ao enviar a mensagem 🫤. Tente novamente",
+			loading: "Enviando a mensagem",
+		});
+	};
 
 	return (
 		<section id={sectionId} className="space-y-16" ref={divRef}>
@@ -37,7 +70,7 @@ export function Contact({ sectionId, dictionary }: ContactProps) {
 								{dictionary.subheading}
 							</h3>
 
-							<form className="flex flex-col gap-4">
+							<form onSubmit={handleSubmit} className="flex flex-col gap-4">
 								<fieldset className="flex flex-col gap-2">
 									<label
 										htmlFor="name"
@@ -47,7 +80,11 @@ export function Contact({ sectionId, dictionary }: ContactProps) {
 									</label>
 									<Input
 										id="name"
+										name="name"
 										placeholder={dictionary.form.namePlaceholder}
+										required
+										min={5}
+										max={30}
 									/>
 								</fieldset>
 
@@ -61,8 +98,12 @@ export function Contact({ sectionId, dictionary }: ContactProps) {
 
 									<TextArea
 										id="message"
+										name="message"
 										placeholder={dictionary.form.messagePlaceholder}
 										className="h-32"
+										required
+										min={10}
+										max={500}
 									/>
 								</fieldset>
 
@@ -70,10 +111,24 @@ export function Contact({ sectionId, dictionary }: ContactProps) {
 									variant="neutral"
 									type="submit"
 									size="lg"
-									className="mx-auto mt-4 text-xs uppercase lg:w-2/4"
+									className={cn("mx-auto mt-4 text-xs uppercase lg:w-2/4", {
+										"pointer-events-none": isSubmitting,
+									})}
+									aria-disabled={isSubmitting}
 								>
-									{dictionary.form.submit}
-									<Send size={20} />
+									{isSubmitting ? (
+										<div className="relative flex justify-center gap-1">
+											<span className="h-2 w-2 animate-pulse rounded-full bg-neutral-700 dark:bg-neutral-500" />
+											<span className="h-2 w-2 animate-pulse rounded-full bg-neutral-700 dark:bg-neutral-500" />
+											<span className="h-2 w-2 animate-pulse rounded-full bg-neutral-700 dark:bg-neutral-500" />
+											<span className="sr-only">Loading</span>
+										</div>
+									) : (
+										<>
+											{dictionary.form.submit}
+											<Send size={20} />
+										</>
+									)}
 								</Button>
 							</form>
 						</motion.div>
