@@ -22,6 +22,7 @@ type ContactProps = {
 
 export function Contact({ sectionId, dictionary }: ContactProps) {
 	const [isSubmitting, setIsSubmitting] = useState(false);
+	const formRef = useRef<HTMLFormElement | null>(null);
 	const divRef = useRef<HTMLDivElement | null>(null);
 	const inView = useInView(divRef);
 
@@ -38,9 +39,16 @@ export function Contact({ sectionId, dictionary }: ContactProps) {
 				"Content-Type": "application/json",
 			},
 			body: JSON.stringify({ name, message }),
-		}).finally(() => {
-			setIsSubmitting(false);
-		});
+		})
+			.then(() => {
+				if (formRef.current) {
+					formRef.current.reset();
+				}
+			})
+			.catch(console.log)
+			.finally(() => {
+				setIsSubmitting(false);
+			});
 
 		toast.promise(promise, {
 			success: "Obrigado por me enviar uma mensagem 😃",
@@ -70,7 +78,11 @@ export function Contact({ sectionId, dictionary }: ContactProps) {
 								{dictionary.subheading}
 							</h3>
 
-							<form onSubmit={handleSubmit} className="flex flex-col gap-4">
+							<form
+								ref={formRef}
+								onSubmit={handleSubmit}
+								className="flex flex-col gap-4"
+							>
 								<fieldset className="flex flex-col gap-2">
 									<label
 										htmlFor="name"
