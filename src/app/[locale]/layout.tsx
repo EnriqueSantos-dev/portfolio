@@ -3,9 +3,9 @@ import "../globals.css";
 import { ReactNode } from "react";
 
 import { Metadata } from "next";
-import { Inter } from "next/font/google";
 
 import { Analytics } from "@vercel/analytics/react";
+import { GeistSans } from "geist/font/sans";
 
 import {
 	Footer,
@@ -14,17 +14,12 @@ import {
 	ScrollStatePageIndicator,
 } from "@/components";
 
-import { getDictionary, i18n,Locale } from "@/i18n";
+import { getDictionary, i18n, Locale } from "@/i18n";
 
 import { getNormalizedLocale } from "@/utils/get-normalized-locale";
 import { mapperDictValuesFromKey } from "@/utils/mappers-i18n";
 
 import { seoConfig } from "@/config/seo-site";
-
-const inter = Inter({
-	subsets: ["latin"],
-	weight: ["400", "500", "700"],
-});
 
 export async function generateMetadata({
 	params,
@@ -51,7 +46,7 @@ export default async function RootLayout({
 	return (
 		<html lang={getNormalizedLocale(params.locale)}>
 			<body
-				className={`${inter.className} bg-neutral-50 transition-colors dark:bg-neutral-900`}
+				className={`${GeistSans.className} bg-neutral-50 transition-colors dark:bg-neutral-900`}
 			>
 				<Providers>
 					<header className="fixed top-0 z-10 h-[72px] w-full border-b border-neutral-200 bg-neutral-50/90 backdrop-blur-md dark:border-neutral-800 dark:bg-neutral-900/90">
