@@ -69,7 +69,7 @@
 			"name": "Nome",
 			"namePlaceholder": "John Doe",
 			"message": "Mensagem",
-			"messagePlaceholder": "Me mande uma mensagem com suas necessidades",
+			"messagePlaceholder": "Me fale quais as suas necessidades!",
 			"submit": "enviar"
 		}
 	}
