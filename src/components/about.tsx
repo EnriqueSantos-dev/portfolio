@@ -4,7 +4,7 @@ import { useRef } from "react";
 
 import Image from "next/image";
 
-import { AnimatePresence, motion,useInView } from "framer-motion";
+import { AnimatePresence, motion, useInView } from "framer-motion";
 
 import { Dictionary } from "@/utils/mappers-i18n";
 
@@ -19,7 +19,7 @@ type AboutProps = {
 
 export function About({ dictionary, sectionId }: AboutProps) {
 	const divRef = useRef<HTMLDivElement | null>(null);
-	const inView = useInView(divRef);
+	const inView = useInView(divRef, { once: true });
 
 	return (
 		<section id={sectionId} ref={divRef} className="space-y-12">

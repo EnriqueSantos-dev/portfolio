@@ -19,7 +19,7 @@ type HeroProps = {
 
 export function Hero({ dictionary }: HeroProps) {
 	const divRef = useRef<HTMLDivElement | null>(null);
-	const inView = useInView(divRef);
+	const inView = useInView(divRef, { once: true });
 
 	return (
 		<div

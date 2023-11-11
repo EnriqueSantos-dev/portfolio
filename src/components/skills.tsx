@@ -17,7 +17,7 @@ type SkillsProps = {
 
 export function Skills({ dictionary, sectionId }: SkillsProps) {
 	const containerRef = useRef<HTMLDivElement | null>(null);
-	const isInView = useInView(containerRef);
+	const isInView = useInView(containerRef, { once: true });
 
 	return (
 		<section id={sectionId} className="flex flex-col space-y-16">

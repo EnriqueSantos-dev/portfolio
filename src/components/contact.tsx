@@ -24,7 +24,7 @@ export function Contact({ sectionId, dictionary }: ContactProps) {
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const formRef = useRef<HTMLFormElement | null>(null);
 	const divRef = useRef<HTMLDivElement | null>(null);
-	const inView = useInView(divRef);
+	const inView = useInView(divRef, { once: true });
 
 	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
