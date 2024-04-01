@@ -6,7 +6,7 @@ Este projeto foi criado com o intuito de mostrar meus projetos e habilidades com
 
 ## Tecnologias utilizadas
 
-- NextJS 13 (ReactJS)
+- NextJS 14 (ReactJS)
 - TailwindCSS
 - Typescript
 - Framer Motion
@@ -26,6 +26,6 @@ Este projeto foi criado com o intuito de mostrar meus projetos e habilidades com
 ## Como rodar o projeto
 
 - Clone o repositório
-- Instale as dependências com `yarn` ou `npm install` ou `pnpm install` (recomendado)
-- Rode o projeto com `yarn dev` ou `npm run dev` ou `pnpm dev` (recomendado)
-- Acesse o projeto em `localhost:3000`
+- Instale as dependências com `yarn install`, `npm install` ou `pnpm install` (recomendado)
+- Rode o projeto com `yarn dev`, `npm run dev` ou `pnpm dev` (recomendado)
+- Acesse o projeto em [http://localhost:3000](http://localhost:3000)
