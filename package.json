@@ -35,8 +35,9 @@
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
 		"react-hot-toast": "^2.4.1",
-		"resend": "^0.16.0",
+		"resend": "^3.2.0",
 		"semantic-commit-emoji": "^0.6.2",
+		"sharp": "^0.33.3",
 		"tailwind-merge": "^1.13.2",
 		"tailwindcss-animate": "^1.0.6",
 		"zod": "^3.21.4"
