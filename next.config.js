@@ -1,13 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    domains: [
-      "cdn.jsdelivr.net/gh/devicons/devicon/icons",
-      "img.icons8.com",
-      "github.com",
-      "media.graphassets.com",
-    ],
-  },
+	images: {
+		remotePatterns: [
+			{ hostname: "cdn.jsdelivr.net" },
+			{ hostname: "img.icons8.com" },
+			{ hostname: "github.com" },
+			{ hostname: "media.graphassets.com" },
+		],
+	},
 };
 
 module.exports = nextConfig;
