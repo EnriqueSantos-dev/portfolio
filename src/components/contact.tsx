@@ -45,7 +45,6 @@ export function Contact({ sectionId, dictionary }: ContactProps) {
 					formRef.current.reset();
 				}
 			})
-			.catch(console.log)
 			.finally(() => {
 				setIsSubmitting(false);
 			});
@@ -157,6 +156,7 @@ export function Contact({ sectionId, dictionary }: ContactProps) {
 								src={NavIcon}
 								width={450}
 								height={450}
+								priority
 								alt="3d icon rocket"
 								className="inline-block drop-shadow-gradientShadow"
 							/>
