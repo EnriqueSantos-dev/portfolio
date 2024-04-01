@@ -1,5 +1,3 @@
-import PrismaOrmSvg from "@/assets/prisma.svg";
-
 export const skills = [
 	{
 		name: "ReactJS",
@@ -12,7 +10,7 @@ export const skills = [
 	},
 	{
 		name: "TailwindCSS",
-		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
 	},
 	{
 		name: "Styled Components",
@@ -33,7 +31,7 @@ export const skills = [
 	},
 	{
 		name: "NestJS",
-		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg",
+		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg",
 	},
 	{
 		name: "TypeScript",
@@ -61,6 +59,6 @@ export const skills = [
 	},
 	{
 		name: "Prisma ORM",
-		icon: PrismaOrmSvg,
+		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg",
 	},
 ];
