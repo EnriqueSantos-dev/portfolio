@@ -30,7 +30,7 @@ export async function generateMetadata(props: {
 
 export async function generateStaticParams(): Promise<{ locale: string }[]> {
 	return await new Promise((resolve) =>
-		resolve(i18n.locales.map((locale) => ({ locale }))),
+		resolve(i18n.locales.map((locale) => ({ locale })))
 	);
 }
 
@@ -56,7 +56,7 @@ export default async function RootLayout(props: {
 							links={linksNavBar}
 							mobileMenuDictionary={mapperDictValuesFromKey(
 								dictionary,
-								"MobileMenu",
+								"MobileMenu"
 							)}
 						/>
 						<ScrollStatePageIndicator />

@@ -32,7 +32,7 @@ export function ToggleTheme() {
 					<Switch.Root
 						aria-label="Switch between dark and light mode"
 						className={cn(
-							"group bg-purple relative flex h-6 w-12 overflow-hidden items-start focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-amber-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-zinc-900 dark:border-zinc-800 border dark:hover:bg-zinc-800 dark:hover:border-zinc-700 hover:bg-neutral-100 transition-colors dark:bg-neutral-950/50 dark:backdrop-blur-md rounded-full",
+							"group bg-purple relative flex h-6 w-12 overflow-hidden items-start focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-amber-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-zinc-900 dark:border-zinc-800 border dark:hover:bg-zinc-800 dark:hover:border-zinc-700 hover:bg-neutral-100 transition-colors dark:bg-neutral-950/50 dark:backdrop-blur-md rounded-full"
 						)}
 						onCheckedChange={() =>
 							setTheme(theme === "dark" ? "light" : "dark")
@@ -46,7 +46,7 @@ export function ToggleTheme() {
 									"translate-x-full text-neutral-100 bg-neutral-700 group-hover:bg-neutral-950":
 										isDark,
 									"text-neutral-900 bg-neutral-200": !isDark,
-								},
+								}
 							)}
 						>
 							{!isDark ? (
