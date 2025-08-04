@@ -12,8 +12,8 @@ function getLocale(request: NextRequest): string | undefined {
 	request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
 
 	// Use negotiator and intl-localematcher to get best locale
-	let languages = new Negotiator({ headers: negotiatorHeaders }).languages();
-	// @ts-ignore locales are readonly
+	const languages = new Negotiator({ headers: negotiatorHeaders }).languages();
+	// @ts-expect-error locales are readonly
 	const locales: string[] = i18n.locales;
 	return matchLocale(languages, locales, i18n.defaultLocale);
 }
@@ -39,7 +39,8 @@ export function middleware(request: NextRequest) {
 
 	// Check if there is any supported locale in the pathname
 	const pathnameIsMissingLocale = i18n.locales.every(
-		(locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+		(locale) =>
+			!pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
 	);
 
 	// Redirect if there is no locale
@@ -49,7 +50,7 @@ export function middleware(request: NextRequest) {
 		// e.g. incoming request is /products
 		// The new URL is now /en-US/products
 		return NextResponse.redirect(
-			new URL(`/${locale}/${pathname.toLowerCase()}`, request.url)
+			new URL(`/${locale}/${pathname.toLowerCase()}`, request.url),
 		);
 	}
 }

@@ -21,25 +21,27 @@ import { mapperDictValuesFromKey } from "@/utils/mappers-i18n";
 
 import { seoConfig } from "@/config/seo-site";
 
-export async function generateMetadata({
-	params,
-}: {
-	params: { locale: string };
+export async function generateMetadata(props: {
+	params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
+	const params = await props.params;
 	return seoConfig[params.locale as Locale];
 }
 
 export async function generateStaticParams() {
-	return i18n.locales.map((locale) => ({ locale }));
+	return await new Promise((resolve) =>
+		resolve(i18n.locales.map((locale) => ({ locale }))),
+	);
 }
 
-export default async function RootLayout({
-	children,
-	params,
-}: {
+export default async function RootLayout(props: {
 	children: ReactNode;
-	params: { locale: string };
+	params: Promise<{ locale: string }>;
 }) {
+	const params = await props.params;
+
+	const { children } = props;
+
 	const dictionary = await getDictionary(params.locale as Locale);
 	const linksNavBar = mapperDictValuesFromKey(dictionary, "NavBarLinks").links;
 
@@ -54,7 +56,7 @@ export default async function RootLayout({
 							links={linksNavBar}
 							mobileMenuDictionary={mapperDictValuesFromKey(
 								dictionary,
-								"MobileMenu"
+								"MobileMenu",
 							)}
 						/>
 						<ScrollStatePageIndicator />

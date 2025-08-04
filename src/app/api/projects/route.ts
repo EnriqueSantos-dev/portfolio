@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import { getAllProjects,LIMITE_PROJECTS } from "@/services/get-projects";
+import { getAllProjects, LIMITE_PROJECTS } from "@/services/get-projects";
 
 export async function GET(request: NextRequest) {
 	const { searchParams } = new URL(request.url);

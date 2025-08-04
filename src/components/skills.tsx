@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 
-import { AnimatePresence, useInView } from "framer-motion";
+import { AnimatePresence, useInView } from "motion/react";
 
 import { skills } from "@/constants/skills-array";
 

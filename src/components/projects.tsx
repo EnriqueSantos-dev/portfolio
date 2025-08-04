@@ -79,7 +79,7 @@ export function Projects({
 				</p>
 			</div>
 
-			<div className="grid grid-cols-[repeat(auto-fit,minmax(350px,400px))] place-content-center gap-5 drop-shadow-projectShadowLight dark:drop-shadow-projectShadowDark">
+			<div className="drop-shadow-projectShadowLight dark:drop-shadow-projectShadowDark grid grid-cols-[repeat(auto-fit,minmax(350px,400px))] place-content-center gap-5">
 				{(query.isFetching || query.isLoading) &&
 					Array.from({ length: LIMITE_PROJECTS }).map((_, index) => (
 						<CardProjectSkeleton key={index} />

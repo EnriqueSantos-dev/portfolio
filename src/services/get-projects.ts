@@ -35,7 +35,7 @@ const query = `
 export async function getAllProjects(
 	locale: string = "pt_BR",
 	skip: number = 0,
-	first: number = LIMITE_PROJECTS
+	first: number = LIMITE_PROJECTS,
 ): Promise<GetProjectsResponse> {
 	const headers = {
 		"Content-Type": "application/json",

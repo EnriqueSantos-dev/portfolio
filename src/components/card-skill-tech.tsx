@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import { AnimationProps, motion } from "framer-motion";
+import { AnimationProps, motion } from "motion/react";
 
 import {
 	Tooltip,

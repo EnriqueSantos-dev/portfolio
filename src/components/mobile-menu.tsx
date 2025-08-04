@@ -5,8 +5,8 @@ import { createPortal } from "react-dom";
 
 import Link from "next/link";
 
-import { AnimatePresence, motion } from "framer-motion";
 import { AlignRight, X } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 
 import { ToggleTheme } from "@/components";
 import {
@@ -91,7 +91,7 @@ export function MobileMenu({ links, dictionary }: MobileMenuProps) {
 							transition={{ duration: 0.2, delayChildren: 0.5 }}
 							exit={{ opacity: 0, y: -50 }}
 							className={cn(
-								"w-full overflow-y-auto fixed z-[8] inset-0 top-[72px] bg-neutral-50 px-4 py-6 dark:bg-neutral-900 transition-colors lg:hidden"
+								"w-full overflow-y-auto fixed z-[8] inset-0 top-[72px] bg-neutral-50 px-4 py-6 dark:bg-neutral-900 transition-colors lg:hidden",
 							)}
 						>
 							<motion.nav
@@ -155,7 +155,7 @@ export function MobileMenu({ links, dictionary }: MobileMenuProps) {
 						</motion.div>
 					)}
 				</AnimatePresence>,
-				document.getElementById("portal") as HTMLElement
+				document.getElementById("portal") as HTMLElement,
 			)}
 		</>
 	);

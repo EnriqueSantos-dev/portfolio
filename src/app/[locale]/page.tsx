@@ -18,7 +18,10 @@ const getProjects = async () => {
 		.catch(() => undefined);
 };
 
-export default async function Home({ params }: { params: { locale: string } }) {
+export default async function Home(props: {
+	params: Promise<{ locale: string }>;
+}) {
+	const params = await props.params;
 	const locale = getFormattedLocaleForHyGraph(params.locale);
 	const [projects, dictionary] = await Promise.all([
 		getProjects(),

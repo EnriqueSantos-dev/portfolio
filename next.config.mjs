@@ -6,8 +6,9 @@ const nextConfig = {
 			{ hostname: "img.icons8.com" },
 			{ hostname: "github.com" },
 			{ hostname: "media.graphassets.com" },
+			{hostname: "sa-east-1.graphassets.com"}
 		],
 	},
 };
 
-module.exports = nextConfig;
+export default nextConfig;

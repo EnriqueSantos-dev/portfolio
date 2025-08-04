@@ -31,7 +31,7 @@ export default function CardProjectSkeleton() {
 								key={index}
 								className={cn(
 									"inline-block h-6 w-20 px-4 py-2",
-									animatePulseStyle
+									animatePulseStyle,
 								)}
 							/>
 						))}

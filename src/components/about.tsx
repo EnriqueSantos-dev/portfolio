@@ -4,7 +4,7 @@ import { useRef } from "react";
 
 import Image from "next/image";
 
-import { AnimatePresence, motion, useInView } from "framer-motion";
+import { AnimatePresence, motion, useInView } from "motion/react";
 
 import { Dictionary } from "@/utils/mappers-i18n";
 
@@ -23,7 +23,7 @@ export function About({ dictionary, sectionId }: AboutProps) {
 
 	return (
 		<section id={sectionId} ref={divRef} className="space-y-12">
-			<h2 className="gradient-highlight block text-center text-3xl font-bold md:text-4xl/10">
+			<h2 className="gradient-highlight block text-3xl font-bold md:text-4xl/10">
 				{dictionary.heading}
 			</h2>
 

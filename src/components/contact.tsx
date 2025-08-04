@@ -4,8 +4,8 @@ import { useRef, useState } from "react";
 
 import Image from "next/image";
 
-import { AnimatePresence, motion, useInView } from "framer-motion";
 import { Send } from "lucide-react";
+import { AnimatePresence, motion, useInView } from "motion/react";
 import toast from "react-hot-toast";
 
 import { Button, Input, TextArea } from "@/components/ui";
@@ -23,7 +23,7 @@ type ContactProps = {
 export function Contact({ sectionId, dictionary }: ContactProps) {
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const formRef = useRef<HTMLFormElement | null>(null);
-	const divRef = useRef<HTMLDivElement | null>(null);
+	const divRef = useRef<HTMLDivElement>(null);
 	const inView = useInView(divRef, { once: true });
 
 	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -49,7 +49,7 @@ export function Contact({ sectionId, dictionary }: ContactProps) {
 				setIsSubmitting(false);
 			});
 
-		toast.promise(promise, {
+		await toast.promise(promise, {
 			success: "Obrigado por me enviar uma mensagem 😃",
 			error:
 				"Parece que ocorreu algum erro ao enviar a mensagem 🫤. Tente novamente",
@@ -79,6 +79,7 @@ export function Contact({ sectionId, dictionary }: ContactProps) {
 
 							<form
 								ref={formRef}
+								// eslint-disable-next-line @typescript-eslint/no-misused-promises
 								onSubmit={handleSubmit}
 								className="flex flex-col gap-4"
 							>

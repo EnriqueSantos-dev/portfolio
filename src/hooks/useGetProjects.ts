@@ -19,7 +19,7 @@ export function useGetProjects({
 		queryKey: ["projects", skip, first] as const,
 		queryFn: async () => {
 			const res = await fetch(
-				`/api/projects?locale=${locale}&skip=${skip}&first=${first}`
+				`/api/projects?locale=${locale}&skip=${skip}&first=${first}`,
 			);
 			const data = await res.json();
 			return data as GetProjectsResponse;
