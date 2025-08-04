@@ -3,7 +3,7 @@
 import { RefObject, useEffect, useState } from "react";
 
 const useGetBoundingClient = <T extends HTMLElement>(
-	ref: RefObject<T | null>,
+	ref: RefObject<T | null>
 ) => {
 	const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 

@@ -13,11 +13,11 @@ const generateSiteTitleAndDesc = (locale: Locale) => {
 		? {
 				title: "Enrique Santos | Portfólio",
 				description: "Portfólio de Enrique Santos, desenvolvedor web fullstack",
-		  }
+			}
 		: {
 				title: "Enrique Santos | Portfolio",
 				description: "Enrique Santos portfolio, fullstack web developer",
-		  };
+			};
 };
 
 const generateImagesData = (locale: Locale) => {

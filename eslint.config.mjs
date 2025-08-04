@@ -17,9 +17,8 @@ import tseslint from "typescript-eslint";
  * */
 const config = [
 	js.configs.recommended,
-	eslintPluginPrettier,
 	...tseslint.configs.recommendedTypeChecked,
-
+	eslintPluginPrettier,
 	{
 		languageOptions: {
 			parserOptions: {
