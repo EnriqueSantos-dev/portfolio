@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
 	try {
 		const nameParsed = name.trim();
 		await resend.emails.send({
-			from: `Portfólio | ${nameParsed} | <onboarding@resend.dev>`,
+			from: `Portfólio | ${nameParsed} | <site@enriquesantos.dev>`,
 			to: "contatoenriquesantos@gmail.com",
 			subject: `${nameParsed} te enviou uma mensagem`,
 			text: message,

@@ -28,7 +28,7 @@ export async function generateMetadata(props: {
 	return seoConfig[params.locale as Locale];
 }
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ locale: string }[]> {
 	return await new Promise((resolve) =>
 		resolve(i18n.locales.map((locale) => ({ locale }))),
 	);

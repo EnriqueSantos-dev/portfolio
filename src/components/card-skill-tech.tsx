@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import { AnimationProps, motion } from "motion/react";
+import { motion, MotionProps } from "motion/react";
 
 import {
 	Tooltip,
@@ -18,7 +18,7 @@ type CardSkillTechProps = {
 	tooltip: string;
 	iconUrl: string;
 	isInvertInDark?: boolean;
-	motionConfig?: AnimationProps;
+	motionConfig?: MotionProps;
 };
 
 export default function CardSkillTech({
